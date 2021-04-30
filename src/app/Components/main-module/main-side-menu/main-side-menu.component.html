@@ -1,21 +1,26 @@
-<div class="border1 w3-sidebar w3-light-grey w3-bar-block scroll1" style="width: 300px;">
+<div class="border1 w3-sidebar w3-light-grey w3-bar-block " style="width: 300px;">
   <br>
-  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-    <div class="image">
+  <div class="user-panel mt-3 pb-3 mb-3">
+    <div class="image" style="
+    /* align-content: center; */
+    text-align: center;
+    margin: auto;
+">
       <img *ngIf="!imageToShow" src="../../../../assets/img/user.jpg" class="userimage" alt="User Image">
       <img *ngIf="imageToShow" class="userimage" [src]="imageToShow">
 
     </div>
 
     <div class="userdetails">
-      {{currentUser.full_name}}
+      <span style="font-size: 1.2em;"><b>{{currentUser.full_name}}</b></span>
       <br>
-      {{currentUser.designation}}
+      <span style="font-size: 1em;">{{currentUser.designation}}</span>
+      
     </div>
 
   </div>
 
-
+<hr style="margin: 10px;"/>
   <div class="sidenav1" *ngIf="currentUser.role==admin">
     <br>
 

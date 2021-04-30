@@ -5,6 +5,8 @@
  @import '~perfect-scrollbar/css/perfect-scrollbar.css'; */
 /* You can add global styles to this file, and also import other style files */
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 @font-face {
   font-family: "Frank Ruhl Libre", serif;
   src: url(assets/fonts/FrankRuhlLibre-Light.ttf) format("truetype");
@@ -12,7 +14,7 @@
 
 body {
   font-size: 0.9rem;
-  font-family: "Frank Ruhl Libre";
+  font-family: 'Quicksand', sans-serif;
 }
 
 .page-wrapper.toggled .sidebar {
