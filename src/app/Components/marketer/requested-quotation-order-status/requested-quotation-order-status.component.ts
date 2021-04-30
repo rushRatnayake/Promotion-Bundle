@@ -6,6 +6,7 @@ import { UserService } from 'src/app/Services/user/user.service';
 import { InvoiceService } from 'src/app/Services/invoice/invoice.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FILE_URL } from 'src/app/app-global';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
   quotation: any = [];
   id!: any;
   userdetails: any;
-
+  quotationAvailable :boolean = false;
+  invoiceAvailable : boolean = false;
   constructor(
     private location: Location,
     private quotationService: QuotationService,
@@ -43,8 +45,17 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
   async loadDetails() {
     await this.quotationService.getSingleQuotation(this.id).subscribe(data => {
       this.quotation = data.payload;
-      console.log(this.quotation);
       this.loadUserDetails();
+      if(this.quotation.file != null && this.quotation.file != "" ){
+        this.quotationAvailable = true;
+      }else{
+        this.quotationAvailable = false;
+      }
+      if(this.quotation.invoice != null && this.quotation.invoice != "" ){
+        this.invoiceAvailable = true;
+      }else{
+        this.invoiceAvailable = false;
+      }
     });
   }
 
@@ -54,6 +65,11 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
       this.userdetails = data.payload;
     });
   }
+
+  
+
+
+
 
   acceptClick(id: any) {
     var obj = {
