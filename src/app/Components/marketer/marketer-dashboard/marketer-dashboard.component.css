@@ -1,11 +1,11 @@
 .bg {
+  background-color: #f0f0f0;
+    margin: 0px 10px;
   /* background-image: url(../../../../assets/img/marketer_bg.png); */
 }
 
 .maincard_body {
   background-color: #227cc3;
-  /* background-image: linear-gradient(180deg, #227cc3, #115a92); */
-  border-radius: 10px;
   font-weight: bold;
   text-align: center;
 }
