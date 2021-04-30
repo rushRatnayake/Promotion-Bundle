@@ -1,3 +1,20 @@
 .btn {
   background-image: none;
 }
+.card-body {
+  background-color: #b4b9dc;
+}
+table {
+  color: black;
+  font-weight: 900;
+}
+.header-div {
+  padding: 8px;
+  margin-top: 20px;
+}
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #217cc3;
+  font-weight: bold;
+}
