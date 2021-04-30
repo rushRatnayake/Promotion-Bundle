@@ -45,10 +45,10 @@
                 <br>
                 <div class="row">
                     <div class="col-md-6">
-                        <label class="field_name">Quotation</label>
+                        <label class="field_name">Quotation Request Status</label>
                     </div>
                     <div class="col-md-6">
-                        <label class="field_value">{{quotation.status}}</label>
+                        <label class="field_value">{{quotation.status|titlecase}}</label>
                     </div>
                 </div>
                 <br>
@@ -76,10 +76,6 @@
                                 <td class="tblButton">
                                     <input (change)="onFileChange($event)" class="uploadimagebtn btn btn-block btn-info"
                                         title="Upload" type="file" id="myFile" name="filename">
-                                    <!-- <button (click)="onUpload()" type="button" title="Upload" class="btn"
-                                        style="color: white;">
-                                        Upload
-                                    </button> -->
                                 </td>
                                 <td class="tblButton">
                                     <b>Not Sent</b>
