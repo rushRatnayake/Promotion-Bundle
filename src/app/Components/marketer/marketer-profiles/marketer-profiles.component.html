@@ -6,7 +6,7 @@
     <br>
     <!-- <div class="bg"> -->
 
-    <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px;">
+    <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px; margin-bottom: 10px;">
         <div class="row">
             <!-- detail view -->
             <div class="col-md-8">
@@ -92,7 +92,7 @@
                 <br>
 
                 <div class="icon_img">
-                    <img class="icon_img" [src]="imageToShow1" *ngIf="imageToShow1">
+                    <img [src]="imageToShow1" *ngIf="imageToShow1">
                     <input (change)="onFileChange1($event)" class="uploadimagebtn btn btn-block btn-info" type="file"
                         id="myFile1" name="filename1">
                 </div>

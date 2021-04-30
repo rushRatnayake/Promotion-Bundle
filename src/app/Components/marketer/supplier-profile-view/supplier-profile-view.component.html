@@ -1,116 +1,109 @@
 <div class="bg">
+  <div style="height: 100px;"></div>
 
-    <div style="height: 100px;"></div>
+  <div class="header-container">
+    <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+    <h1>{{userData.full_name}}</h1>
+  </div>
 
+  <div class="row profile-container">
+      <div class="col-md-5">
+          <div class="leftside">
+              <div style="margin: 30px;">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name">Company</label>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="field_value">{{userData.company}}</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name">Email Address</label>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="field_value">{{userData.email}}</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name">Designation</label>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="field_value">{{userData.designation}}</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name">Experience(years)</label>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="field_value">{{userData.experience}}</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name">Additional Details</label>
+                      </div>
+                      <div class="col-md-6">
+                          <label class="field_value">none</label>
+                      </div>
+                  </div>
+                  <br>
+                  <br>
+              </div>
+          </div>
 
-    <div class="row">
-        <div class="col-md-1">
-            <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
-        </div>
-        <div class="col-md-5">
-            <div class="leftside">
-                <div style="margin: 30px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">{{userData.full_name}}</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">Company</label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field_value">{{userData.company}}</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">Email Address</label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field_value">{{userData.email}}</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">Designation</label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field_value">{{userData.designation}}</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">Experience(years)</label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field_value">{{userData.experience}}</label>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">Additional Details</label>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="field_value">none</label>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-            </div>
-
-        </div>
+      </div>
 
 
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-            <div class="rightside">
-                <div style="margin: 30px;">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <label class="field_name">Rating</label>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-md-12 col-sm-12">
-                                <div style="float: left; margin-top: -40px;">
-                                    <ngb-rating [max]="5" class="star-active" [(rate)]="userData.rating"
-                                        (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly">
-                                    </ngb-rating>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name"><a class="field_name" (click)="navigateToRating()"><u>Rate
-                                        Supplier</u></a></label>
-                        </div>
-                        <div class="col-md-6">
-                            <label><b>Note</b> Please rate the designer only if order has been placed in
-                                order to get accurate results</label>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+          <div class="rightside">
+              <div style="margin: 30px;">
+                  <div class="row">
+                      <div class="col-md-2">
+                          <label class="field_name">Rating</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="col-md-12 col-sm-12">
+                              <div style="float: left; margin-top: -40px;">
+                                  <ngb-rating [max]="5" class="star-active" [(rate)]="userData.rating"
+                                      (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly">
+                                  </ngb-rating>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label class="field_name"><a class="field_name" (click)="navigateToRating()"><u>Rate
+                                      Supplier</u></a></label>
+                      </div>
+                      <div class="col-md-6">
+                          <label><b>Note</b> Please rate the designer only if order has been placed in
+                              order to get accurate results</label>
+                      </div>
+                  </div>
+                  <br>
+                  <br>
+              </div>
 
-                <br>
-                <div class="icon_img">
-                    <img *ngIf="!imageToShow" src="../../../../../assets/img/profile.png">
-                    <img class="icon_img" [src]="imageToShow" *ngIf="imageToShow">
-                    <!-- <but ton class="uploadimagebtn btn btn-block btn-info">Upload</button> -->
-                </div>
-            </div>
+              <br>
+              <div class="icon_img">
+                  <img *ngIf="!imageToShow" src="../../../../../assets/img/profile.png">
+                  <img class="icon_img" [src]="imageToShow" *ngIf="imageToShow">
+                  <!-- <but ton class="uploadimagebtn btn btn-block btn-info">Upload</button> -->
+              </div>
+          </div>
 
-        </div>
+      </div>
 
-    </div>
-
+  </div>
 </div>

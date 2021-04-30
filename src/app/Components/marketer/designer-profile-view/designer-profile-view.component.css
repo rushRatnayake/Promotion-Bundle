@@ -1,5 +1,29 @@
 .bg {
   /* background-image: url(../../../../assets/img/marketer_bg.png); */
+  height: auto;
+  min-height: 94vh;
+}
+
+.header-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-container > img {
+  margin: 10px;
+  text-align: center;
+}
+.header-container > h1 {
+  margin: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.profile-container {
+  padding-left: 40px;
+  padding-bottom: 20px;
 }
 
 .field_name {
@@ -19,6 +43,9 @@ img {
 }
 
 .icon_img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
 .btn_image {

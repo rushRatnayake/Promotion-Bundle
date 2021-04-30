@@ -1,5 +1,7 @@
 .bg {
   /* background-image: url(../../../../assets/img/marketer_bg.png); */
+  height: auto;
+  min-height: 94vh;
 }
 
 .viewbtn {

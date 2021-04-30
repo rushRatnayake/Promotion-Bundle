@@ -2,20 +2,16 @@
 
     <div style="height: 100px;"></div>
 
+    <div class="header-container">
+      <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+      <h1>{{userData.full_name}}</h1>
+    </div>
 
-    <div class="row">
-        <div class="col-md-1">
-            <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
-        </div>
+
+    <div class="row profile-container">
         <div class="col-md-5">
             <div class="leftside">
                 <div style="margin: 30px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="field_name">{{userData.full_name}}</label>
-                        </div>
-                    </div>
-                    <br>
                     <div class="row">
                         <div class="col-md-6">
                             <label class="field_name">Gender</label>
