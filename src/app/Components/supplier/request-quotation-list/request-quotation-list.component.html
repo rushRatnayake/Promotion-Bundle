@@ -24,7 +24,7 @@
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Date</th>
-                    <th>Quotation</th>
+                    <th>Request Status</th>
                     <th>Order Status</th>
                 </tr>
             </thead>
@@ -35,17 +35,19 @@
                     <td>{{ list.quantity }}</td>
                     <td>{{ list.date | date:'shortDate' }}</td>
                     <td class="tblButton">
-                        <label *ngIf="list.status == 'sent'">
-                            Sent
+                        <label *ngIf="list.status != 'sent'">
+                                {{list.status | titlecase}}
                         </label>
-                        <button (click)="onAccept(list)" *ngIf="list.status != 'sent'" type="button" title="Upload"
-                            class="btn" style="color: white; float: left; width: 50%;">
-                            Accept
-                        </button>
-                        <button (click)="onReject(list)" *ngIf="list.status != 'sent'" type="button" title="Upload"
-                            class="btn" style="color: white; float: right; width: 50%;">
-                            Reject
-                        </button>
+                        <div *ngIf="list.status == 'sent'">
+                            <button (click)="onAccept(list)"  type="button" title="Upload"
+                                class="btn" style="color: white; float: left; width: 50%;">
+                                Accept
+                            </button>
+                            <button (click)="onReject(list)"  type="button" title="Upload"
+                                class="btn" style="color: white; float: right; width: 50%;">
+                                Reject
+                            </button>
+                        </div>
                     </td>
 
                     <td class="tblButton">
