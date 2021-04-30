@@ -21,7 +21,7 @@
             <tbody>
                 <tr *ngFor="let list of designerList">
                     <td>{{ list._id }}</td>
-                    <td (click)="viewProfile(list)"><u>{{ list.full_name }}</u> </td>
+                    <td class="profile-link" (click)="viewProfile(list)"><u>{{ list.full_name }}</u> </td>
                     <td>{{ list.created_at | date:'shortDate' }}</td>
                     <td>{{ list.status }}</td>
                     <td>{{ list.last_login }}</td>

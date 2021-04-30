@@ -1,14 +1,16 @@
 <div style="height: 100px;"></div>
 
-<img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+<div class="header-container">
+  <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+  <h1>{{userdetails.full_name}}</h1>
+</div>
 
-<h1 style="display: inline-block;">Marketer Name</h1>
 
 <br>
 <br>
 <!-- <div class="bg"> -->
 
-<div class="row">
+<div class="row profile-container">
     <!-- detail view -->
     <div class="col-md-8">
         <div class="row">
@@ -16,7 +18,7 @@
                 <label class="field_name">Contact Number</label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.contact_no}}</label>
+                <label class="field_value">{{userdetails.contact_no}}</label>
             </div>
         </div>
         <br>
@@ -26,7 +28,7 @@
                 <label class="field_name">Email Address</label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.email}}</label>
+                <label class="field_value">{{userdetails.email}}</label>
             </div>
         </div>
         <br>
@@ -36,7 +38,7 @@
                 <label class="field_name">Company</label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.company}}</label>
+                <label class="field_value">{{userdetails.company}}</label>
             </div>
         </div>
         <br>
@@ -46,7 +48,7 @@
                 <label class="field_name">Designation</label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.designation}}</label>
+                <label class="field_value">{{userdetails.designation}}</label>
             </div>
         </div>
         <br>
@@ -56,7 +58,7 @@
                 <label class="field_name">Product/Service oriented </label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.type}}</label>
+                <label class="field_value">{{userdetails.type}}</label>
             </div>
         </div>
         <br>
@@ -66,7 +68,7 @@
                 <label class="field_name">Industry of work</label>
             </div>
             <div class="col-md-6">
-                <label class="field_name">{{userdetails.industry}}</label>
+                <label class="field_value">{{userdetails.industry}}</label>
             </div>
         </div>
         <br>

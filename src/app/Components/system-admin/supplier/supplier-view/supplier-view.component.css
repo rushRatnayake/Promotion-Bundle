@@ -1,4 +1,30 @@
+.profile-container {
+  padding-left: 40px;
+}
+
+.header-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.header-container > img {
+  margin: 10px;
+  text-align: center;
+}
+.header-container > h1 {
+  margin: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .field_name {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.field_value {
   font-size: 24px;
 }
 
@@ -8,6 +34,9 @@ img {
 }
 
 .icon_img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
 .bg {
@@ -20,6 +49,4 @@ img {
 
 .backbtn {
   width: 70px;
-  display: inline-block;
-  padding-right: 20px;
 }
