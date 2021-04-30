@@ -45,8 +45,6 @@ export class ManageProductsComponent implements OnInit {
       this.productList = data.payload.products;
       let count = 0;
       this.productList.forEach(async (element: any) => {
-
-        debugger;
         if (element.img_url != "") {
           this.getImage(element.img_url, count);
         } else {

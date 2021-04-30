@@ -56,7 +56,6 @@ export class RequestRecievedProjectsComponent implements OnInit {
   }
 
   selectStatus(event: any) {
-    debugger;
     this.selectedStatus = event.name;
     this.loadDetails(event.name);
   }

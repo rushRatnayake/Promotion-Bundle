@@ -47,7 +47,7 @@ export class ProductService {
   deleteProduct(id: any) {
     return this.http.delete<any>(API_URL + '/products/' + id);
   }
-  
+
   searchProduct(product:String){
     return this.http.get<any>(API_URL + '/products?q=san&category='+product);
   }
@@ -56,7 +56,6 @@ export class ProductService {
     return this.http.get<any>(API_URL + '/products?q=san&name='+product);
   }
   postProduct(obj: any): Observable<any> {
-    debugger;
     var url = '/products';
     var data = obj;
 

@@ -97,7 +97,6 @@ export class RequestForDesignsComponent implements OnInit {
     if (!this.formHeader?.invalid) {
       this.checked = false;
       this.designService.postDesign(this.formHeader?.getRawValue()).subscribe(data => {
-        debugger;
         if (data.success == true) {
           this.loadDetails();
           this.toastr.success(CREATE_MSG);
@@ -116,7 +115,6 @@ export class RequestForDesignsComponent implements OnInit {
 
   async loadDetails() {
     await this.designService.getRequestedDesigns().subscribe(data => {
-      debugger;
       this.tempList = data.payload.designs;
       this.designList = this.tempList;
 

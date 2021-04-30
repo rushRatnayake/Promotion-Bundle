@@ -51,9 +51,7 @@ export class DesignerProfileViewComponent implements OnInit {
   async getImage(filepath: any) {
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob(data);
-      debugger;
       this.isImageLoading = false;
     }, (error: any) => {
       this.isImageLoading = false;
@@ -65,7 +63,6 @@ export class DesignerProfileViewComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;

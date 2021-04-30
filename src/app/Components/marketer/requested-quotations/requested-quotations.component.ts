@@ -47,7 +47,6 @@ export class RequestedQuotationsComponent implements OnInit {
 
   async getSupplierName(id: any, line: any) {
     await this.profileService.getUserDetail(id).subscribe(data => {
-      debugger;
       this.userData = data.payload;
       this.quotationList[line].supplier = this.userData.full_name;
     });

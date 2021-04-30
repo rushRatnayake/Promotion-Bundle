@@ -19,7 +19,6 @@ export class MarketerDashboardComponent implements OnInit {
   dashboardDetails: any;
   async loadDetails() {
     await this.dashboardService.getMarketerDashboard().subscribe(data => {
-      debugger;
       this.dashboardDetails = data.payload;
 
     });

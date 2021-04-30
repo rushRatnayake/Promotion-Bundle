@@ -51,7 +51,6 @@ export class RequestQuotationViewComponent implements OnInit {
 
   async loadUserDetails() {
     await this.userService.getMarketerById(this.quotation.from).subscribe(data => {
-      debugger;
       this.userdetails = data.payload;
     });
   }

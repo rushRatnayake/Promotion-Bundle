@@ -97,7 +97,6 @@ export class DesignViewComponent implements OnInit {
       const formData = new FormData();
       formData.append('file', file);
       this.commonService.postImage(formData).subscribe(data => {
-        debugger;
         this.designerList[line].images = [data.payload.file_path];
       });
 
@@ -108,7 +107,6 @@ export class DesignViewComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;

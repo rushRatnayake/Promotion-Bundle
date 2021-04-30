@@ -44,7 +44,6 @@ export class MarketerProfilesComponent implements OnInit {
 
   async loadDetails() {
     await this.profileService.getUserDetail(this.currentUser.id).subscribe(data => {
-      debugger;
       this.formHeader.patchValue(data.payload);
       this.formHeader.patchValue({ "dob": this.commonService.getDateTimeOnDateFormat(data.payload.dob) });
       this.getImage1()
@@ -173,9 +172,7 @@ export class MarketerProfilesComponent implements OnInit {
     let filepath = this.formHeader.get('profile_pic')!.value;
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob1(data);
-      debugger;
       this.isImageLoading = false;
     }, error => {
       this.isImageLoading = false;
@@ -186,9 +183,7 @@ export class MarketerProfilesComponent implements OnInit {
     let filepath = this.formHeader.get('company_pic')!.value;
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob2(data);
-      debugger;
       this.isImageLoading = false;
     }, (error: any) => {
       this.isImageLoading = false;
@@ -201,7 +196,6 @@ export class MarketerProfilesComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob1(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow1 = reader.result;
@@ -213,7 +207,6 @@ export class MarketerProfilesComponent implements OnInit {
   }
 
   createImageFromBlob2(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow2 = reader.result;

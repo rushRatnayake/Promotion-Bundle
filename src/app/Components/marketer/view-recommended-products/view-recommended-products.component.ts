@@ -42,7 +42,6 @@ export class ViewRecommendedProductsComponent implements OnInit {
     this.spinner.show();
     this.productService.getRecommendedProducts(id).subscribe(data => {
       // this.formHeader.patchValue(data.payload);
-      debugger;
       this.spinner.hide();
       this.cardList = data.payload[0].products;
 
@@ -72,7 +71,6 @@ export class ViewRecommendedProductsComponent implements OnInit {
   }
 
   onProductChange(event: any) {
-    debugger;
     this.loadDetails(event._id);
   }
 

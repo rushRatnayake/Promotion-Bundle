@@ -46,7 +46,6 @@ export class GraphicDesignerListComponent implements OnInit {
 
   async loadDetails() {
     await this.userService.getMarketerList().subscribe(data => {
-      debugger;
       this.designerList = data.payload.users;
 
     });

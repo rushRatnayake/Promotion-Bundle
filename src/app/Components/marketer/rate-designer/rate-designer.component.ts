@@ -41,7 +41,6 @@ export class RateDesignerComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
     console.log(this.selected1);
     this.ratingService.postDesignerRating(
       {

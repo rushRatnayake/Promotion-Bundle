@@ -31,7 +31,6 @@ export class MarketerViewComponent implements OnInit {
 
   async loadDetails() {
     await this.userService.getMarketerById(this.id).subscribe(data => {
-      debugger;
       this.userdetails = data.payload;
     });
   }

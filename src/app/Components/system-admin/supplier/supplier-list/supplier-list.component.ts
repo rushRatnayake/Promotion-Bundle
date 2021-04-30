@@ -46,7 +46,6 @@ export class SupplierListComponent implements OnInit {
 
   async loadDetails() {
     await this.userService.getSupplierList().subscribe(data => {
-      debugger;
       this.supplierList = data.payload.users;
 
     });

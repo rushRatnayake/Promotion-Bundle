@@ -21,7 +21,6 @@ export class QuotationService {
   }
 
   postQuotations(obj: any): Observable<any> {
-    debugger;
     var url = '/quotations';
     var data = obj;
 
@@ -35,7 +34,6 @@ export class QuotationService {
 
 
   putAcceptQuotation(id: any): Observable<any> {
-    debugger;
     var url = '/quotations/' + id;
     var data = {
       "status": "accepted"
@@ -51,7 +49,6 @@ export class QuotationService {
 
 
   putRejectQuotation(id: any): Observable<any> {
-    debugger;
     var url = '/quotations/' + id;
     var data = {
       "status": "rejected"
@@ -67,7 +64,6 @@ export class QuotationService {
 
 
   putSupplierUploadQuotation(id: any, file: any): Observable<any> {
-    debugger;
     var url = '/quotations/' + id;
     var data = {
       "invoice": file

@@ -31,7 +31,6 @@ export class ManageCompanyProductsComponent implements OnInit {
   }
 
   navigateToProduct(list: any) {
-    debugger;
     this.router.navigate(['supplier/edit_product/', list._id, "add_edit"]);
   }
 
@@ -39,7 +38,6 @@ export class ManageCompanyProductsComponent implements OnInit {
   async loadDetails() {
     await this.productService.getAllProducts().subscribe(data => {
       // this.formHeader.patchValue(data.payload);
-      debugger;
       this.cardList = data.payload.products;
 
       let count = 0;

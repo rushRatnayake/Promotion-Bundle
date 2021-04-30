@@ -40,7 +40,6 @@ export class RateSupplierComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
     console.log(this.selected1);
     this.ratingService.postSupplierRating(
       {

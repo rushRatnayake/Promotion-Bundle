@@ -149,7 +149,7 @@ export class DesignerProfileComponent implements OnInit {
   // getImage() {
   //   let filepath = this.formHeader.get('profile_pic')!.value;
   //   this.commonService.getImage(filepath).subscribe(data => {
-  //     
+  //
   //   })
   // }
 
@@ -157,9 +157,7 @@ export class DesignerProfileComponent implements OnInit {
     let filepath = this.formHeader.get('profile_pic')!.value;
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob(data);
-      debugger;
       this.isImageLoading = false;
     }, error => {
       this.isImageLoading = false;
@@ -171,7 +169,6 @@ export class DesignerProfileComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;

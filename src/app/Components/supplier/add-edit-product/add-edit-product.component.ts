@@ -64,14 +64,12 @@ export class AddEditProductComponent implements OnInit {
   async loadDetails() {
 
     await this.productService.getSingleProduct(this.id).subscribe(data => {
-      debugger;
       this.product = data.payload;
       // var detail = this.product.find((element: { _id: any; }) => element._id == this.id);
       this.formHeader.patchValue(this.product);
       this.getImage();
     });
     // await this.productService.getAllProducts().subscribe(data => {
-    //   debugger;
     //   this.product = data.payload.products;
     //   var detail = this.product.find((element: { _id: any; }) => element._id == this.id);
     //   this.formHeader.patchValue(detail);
@@ -81,7 +79,6 @@ export class AddEditProductComponent implements OnInit {
   async loadCategories() {
 
     await this.productService.getProductCategories().subscribe(data => {
-      debugger;
       this.categories = data.payload.categories;
     });
 
@@ -120,7 +117,6 @@ export class AddEditProductComponent implements OnInit {
 
   checked: boolean = false;
   onSubmit() {
-    debugger;
     this.spinner.show();
     if (this.formHeader?.invalid) {
       this.checked = true;
@@ -201,9 +197,7 @@ export class AddEditProductComponent implements OnInit {
     let filepath = this.formHeader.get('img_url')!.value;
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob(data);
-      debugger;
       this.isImageLoading = false;
     }, (error: any) => {
       this.isImageLoading = false;
@@ -215,7 +209,6 @@ export class AddEditProductComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;

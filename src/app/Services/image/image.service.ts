@@ -12,7 +12,6 @@ export class ImageService {
   constructor(public http: HttpClient) { }
 
   postImage(obj: any): Observable<any> {
-    debugger;
     var url = '/images/upload';
     var data = obj;
 

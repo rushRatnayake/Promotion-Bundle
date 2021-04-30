@@ -35,7 +35,6 @@ export class UserService {
   }
 
   putSupplier(min_pay: any, availability: any): Observable<any> {
-    debugger;
     var url = '/users/';
     var data = {
       "min_pay": min_pay,

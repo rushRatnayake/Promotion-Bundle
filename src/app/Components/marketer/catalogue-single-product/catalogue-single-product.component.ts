@@ -81,7 +81,6 @@ export class CatalogueSingleProductComponent implements OnInit {
 
   async loadSuppliers() {
     await this.userService.getSupplierList().subscribe(data => {
-      debugger;
       this.supplierList = data.payload.users;
       this.supplier = this.supplierList.find((element: { _id: string; }) => element._id == this.product.user_id);
 
@@ -125,9 +124,7 @@ export class CatalogueSingleProductComponent implements OnInit {
   async getImage(filepath: any) {
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob(data);
-      debugger;
       this.isImageLoading = false;
     }, (error: any) => {
       this.isImageLoading = false;
@@ -139,7 +136,6 @@ export class CatalogueSingleProductComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;

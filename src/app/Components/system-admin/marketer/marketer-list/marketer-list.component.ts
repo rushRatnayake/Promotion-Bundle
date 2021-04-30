@@ -45,7 +45,6 @@ export class MarketerListComponent implements OnInit {
 
   async loadDetails() {
     await this.userService.getMarketerList().subscribe(data => {
-      debugger;
       this.marketerList = data.payload.users;
 
     });
@@ -68,5 +67,5 @@ export class MarketerListComponent implements OnInit {
       }
     });
   }
-  
+
 }

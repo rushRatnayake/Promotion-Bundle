@@ -224,7 +224,6 @@ export class MainSideMenuComponent implements OnInit {
   async getImage(filepath: any) {
     this.isImageLoading = true;
     console.log(filepath);
-    debugger;
     (await this.commonService.getImage(filepath)).subscribe(data => {
       this.createImageFromBlob(data);
       this.isImageLoading = false;

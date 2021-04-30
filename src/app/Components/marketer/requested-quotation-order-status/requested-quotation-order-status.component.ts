@@ -61,12 +61,11 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
 
   async loadUserDetails() {
     await this.userService.getSupplierById(this.quotation.to).subscribe(data => {
-      debugger;
       this.userdetails = data.payload;
     });
   }
 
-  
+
 
 
 

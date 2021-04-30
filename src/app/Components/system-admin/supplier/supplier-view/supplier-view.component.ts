@@ -30,7 +30,6 @@ export class SupplierViewComponent implements OnInit {
 
   async loadDetails() {
     await this.userService.getSupplierById(this.id).subscribe(data => {
-      debugger;
       this.userdetails = data.payload;
     });
   }

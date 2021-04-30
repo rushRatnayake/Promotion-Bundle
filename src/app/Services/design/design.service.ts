@@ -33,7 +33,6 @@ export class DesignService {
 
 
   postDesign(obj: any): Observable<any> {
-    debugger;
     var url = '/designs';
     var data = obj;
 
@@ -47,7 +46,6 @@ export class DesignService {
 
 
   putAcceptDesign(id: any): Observable<any> {
-    debugger;
     var url = '/designs/' + id;
     var data = {
       "status": "accepted"
@@ -62,7 +60,6 @@ export class DesignService {
   }
 
   putRejectDesign(id: any): Observable<any> {
-    debugger;
     var url = '/designs/' + id;
     var data = {
       "status": "rejected"
@@ -78,7 +75,6 @@ export class DesignService {
 
 
   putConfirmDesign(obj: any, id: any): Observable<any> {
-    debugger;
     var url = '/designs/' + id;
     var data = obj;
 

@@ -42,7 +42,6 @@ export class SupplierProfileComponent implements OnInit {
 
   async loadDetails() {
     await this.profileService.getUserDetail(this.currentUser.id).subscribe(data => {
-      debugger;
       this.formHeader.patchValue(data.payload);
       this.formHeader.patchValue({ "dob": this.commonService.getDateTimeOnDateFormat(data.payload.dob) });
       this.getImage();
@@ -144,9 +143,7 @@ export class SupplierProfileComponent implements OnInit {
     let filepath = this.formHeader.get('company_pic')!.value;
     this.isImageLoading = true;
     (await this.commonService.getImage(filepath)).subscribe(data => {
-      debugger;
       this.createImageFromBlob(data);
-      debugger;
       this.isImageLoading = false;
     }, (error: any) => {
       this.isImageLoading = false;
@@ -158,7 +155,6 @@ export class SupplierProfileComponent implements OnInit {
   isImageLoading: boolean = true;
 
   createImageFromBlob(image: Blob) {
-    debugger;
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageToShow = reader.result;
