@@ -9,27 +9,24 @@
         </div>
     </div>
     <br>
-
-    <div class="row">
-        <div class="col-md-4 col-sm-4" *ngFor="let list of cardList">
-            <div class="card" style="width: 80%; margin-left: 10%;">
-                <!-- <img class="card-img-top" src="../../../../assets/img/logo_new.jpeg" alt="Product Image"> -->
-                <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
-                    alt="Edit">
-                <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+    
+    <div class="row justify-content-around">
+        <div class="col-md-4 col-sm-8 col-lg-2" style="min-width: 400px;" *ngFor="let list of cardList">
+            <div class="card">
+                <div class="card-header" style="font-size: 1.1em;"><b>{{list.name}}</b></div>
                 <div class="card-body">
-                    <button class="viewbtn" (click)="navigateToProduct(list)">Edit Product</button>
-                    <button class="deletebtn" (click)="onDelete(list)">
-                        <i class="fas fa-trash"></i>
-                    </button>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <label class="product_detail">{{list.name}}</label>
+                    <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
+                        alt="Edit">
+                    <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+                    <div class="card-body">
+                        <button class="viewbtn" (click)="navigateToProduct(list)">Edit Product</button>
+                        <button class="deletebtn" (click)="onDelete(list)">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <label class="product_float">{{list.price}}</label>
+                    <div class="row">
+                        
+                            <p class="product_detail" style="text-align: center;"><b>Price - {{list.price}} LKR </b></p>
                     </div>
                 </div>
             </div>

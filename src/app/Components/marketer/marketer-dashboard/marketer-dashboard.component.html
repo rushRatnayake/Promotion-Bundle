@@ -6,8 +6,18 @@
 
     <div class="row">
         <div class="col-md-4 col-sm-4">
-            <div class="card maincard_body">
-                <div class="card-header">Rankings</div>
+            <div class="card">
+                <div class="card-header  maincard_body">Rankings</div>
+                <div class="card-body maincard_content">
+                    <div class="row" >
+                        <b>Overall Orders Placed </b>
+                    </div>
+                    <div class="row" class="largetext " style="margin-left: 20px;">
+                        {{dashboardDetails.overall_orders || 0}}
+                    </div>
+                    
+                   
+                </div>
             </div>
             <br>
             <div class="card">

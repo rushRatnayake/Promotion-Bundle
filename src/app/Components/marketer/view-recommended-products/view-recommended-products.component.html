@@ -14,30 +14,26 @@
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col-md-4 col-sm-4" *ngFor="let list of cardList">
-            <div class="card" style="width: 80%; margin-left: 10%;">
-                <div class="card">
+    <div class="row justify-content-around">
+        <div class="col-md-4 col-sm-8 col-lg-2" style="min-width: 400px;" *ngFor="let list of cardList">
+            <div class="card">
+                <div class="card-header" style="font-size: 1.1em;"><b>{{list.name}}</b></div>
+                <div class="card-body">
                     <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
-                    alt="Edit">
-                <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+                        alt="Edit">
+                    <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
                     <div class="card-body">
                         <button class="viewbtn" (click)="navigateToProduct(list)">View Product</button>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <label class="product_detail">{{list.name}}</label>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <label class="product_detail">{{list.price}}</label>
-                        </div>
+                        
+                            <p class="product_detail" style="text-align: center;"><b>Price - {{list.price}} LKR </b></p>
                     </div>
                 </div>
             </div>
             <br>
         </div>
     </div>
-
     <br>
     <br>
     <br>
