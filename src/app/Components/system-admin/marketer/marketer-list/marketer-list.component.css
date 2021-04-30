@@ -25,3 +25,8 @@ h2 {
   color: #217cc3;
   cursor: pointer;
 }
+th {
+  font-size: 17px;
+  font-weight: bolder;
+}
+
