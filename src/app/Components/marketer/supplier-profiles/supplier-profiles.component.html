@@ -1,0 +1,52 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <input style="margin-left: 10%;" type="text" class="form-control" placeholder="Search Supplier">
+        </div>
+        <div class="col-md-1 col-sm-1">
+            <label class="label_style" style="margin-left: 30px;">Filters:</label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <ng-select style="margin-right: 10%;" [items]="categoryList" bindLabel="name" bindValue="id"
+                placeholder="Hightest Rating" appendTo="body" [multiple]="false">
+            </ng-select>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4" *ngFor="let list of cardList">
+            <div class="card" style="width: 80%; margin-left: 10%;">
+                <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/logo_new.jpeg"
+                    alt="Product Image">
+                <img style="max-height: 400px;" *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow"
+                    alt="Edit">
+                <div class="card-body">
+                    <button class="viewbtn" (click)="navigateToSupplierView(list)">View Supplier Details</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <label class="product_detail">{{list.full_name || ''}}</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <div style="text-align: center; margin-top: -50px;">
+                            <ngb-rating [max]="5" class="star-active" [(rate)]="list.rating" (hover)="hovered=$event"
+                                (leave)="hovered=0" [readonly]="readonly">
+                            </ngb-rating>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+</div>

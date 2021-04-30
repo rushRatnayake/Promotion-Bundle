@@ -1,0 +1,52 @@
+.bg {
+  /* background-image: url(../../../../assets/img/marketer_bg.png); */
+}
+
+.field_name {
+  font-size: 24px;
+  color: black;
+}
+
+.field_value {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.icon_img {
+}
+
+.btn_image {
+  height: 35px;
+  width: 35px;
+}
+
+.uploadimagebtn {
+  width: 100%;
+}
+
+.leftside {
+  /* background-image: linear-gradient(180deg, white, #115a92); */
+}
+
+.star-active {
+  color: #fbc02d;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.star-active:hover {
+  color: #f9a825;
+  cursor: pointer;
+}
+
+.backbtn {
+  width: 70px;
+  display: inline-block;
+  padding-right: 20px;
+}

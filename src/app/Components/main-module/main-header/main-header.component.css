@@ -1,0 +1,69 @@
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: red;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.topbar img {
+  margin-left: 30px;
+  width: 220px;
+  height: 100%;
+  border: 2px solid black; /* Green */
+}
+
+/* .top {
+  position: fixed;
+  width: 100%;
+} */
+
+.top_centered {
+  position: absolute;
+  left: 50%;
+  transform: translate(-60%, 40%);
+  text-align: center;
+  color: white;
+}
+
+.topbar {
+  height: 100px;
+  background-image: linear-gradient(180deg, #227cc3, #115a92);
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  border-bottom: 2px solid black; /* Green */
+}
+
+.btn_style {
+  background-color: #113e62;
+  color: #ffffff;
+}
+
+.logo {
+  width: 100%;
+}

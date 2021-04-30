@@ -1,0 +1,161 @@
+<!-- <div style="height: 100px;"></div> -->
+
+<div class="split left">
+    <div class="centered">
+        <img src="../../../../assets/img/marketer_register.png">
+    </div>
+</div>
+
+<div class="split right">
+    <div>
+        <!-- <img src="img_avatar.png" alt="Avatar man"> -->
+        <h1 style="text-align: center;">Register !</h1>
+
+        <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px; ">
+            <div *ngIf="isPersonalInfo">
+                <p>Personal Info</p>
+                <br><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Full Name</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="full_name" type="text" class="form-control" placeholder="Full Name">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Contact Number</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="contact_no" type="number" class="form-control"
+                            placeholder="Contact Number">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Email Address</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="email" type="text" class="form-control" placeholder="Email Address">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Enter new password</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="password" type="password" class="form-control"
+                            placeholder="Enter new password">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Re-enter password</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="password" type="password" class="form-control"
+                            placeholder="Re-enter password">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Upload Profile Picture</label>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- <input formControlName="profile_pic" type="file" class="form-control" placeholder="Upload"> -->
+                        <input formControlName="profile_pic" (change)="onFileChange1($event)"
+                            class="uploadimagebtn btn btn-block btn-info" type="file" id="myFile" name="filename">
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div *ngIf="!isPersonalInfo">
+
+                <p>Company Info</p>
+                <br><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Company</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="company" type="text" class="form-control" placeholder="Company">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Designation</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input formControlName="designation" type="text" class="form-control" placeholder="Designation">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Product/Service oriented</label>
+                    </div>
+                    <div class="col-md-8">
+                        <ng-select [items]="productServiceList" bindLabel="name" bindValue="id"
+                            placeholder="Product/Service oriented" appendTo="body" [multiple]="false">
+                        </ng-select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Industry of work</label>
+                    </div>
+                    <div class="col-md-8">
+                        <ng-select formControlName="industry" [items]="industryList" bindLabel="name" bindValue="id"
+                            placeholder="Industry" appendTo="body" [multiple]="false">
+                        </ng-select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="label_style">Upload Profile Picture</label>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- <input formControlName="company_pic" type="file" class="form-control" placeholder="Upload"> -->
+                        <input formControlName="company_pic" (change)="onFileChange2($event)"
+                            class="uploadimagebtn btn btn-block btn-info" type="file" id="myFile" name="filename">
+                    </div>
+                </div>
+                <br>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col" *ngIf="isPersonalInfo">
+                    <button (click)="nextClick()" type="button" class="btn btn-block btn-success ">Next</button>
+                </div>
+                <div class="col" *ngIf="!isPersonalInfo">
+                    <button type="submit" class="btn btn-block btn-success ">Done</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>

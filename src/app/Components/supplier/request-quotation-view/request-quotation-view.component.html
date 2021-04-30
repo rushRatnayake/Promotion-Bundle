@@ -1,0 +1,101 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+
+    <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+
+    <div class="col-md-8">
+        <div class="rightside">
+            <div style="margin: 30px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Request ID</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation._id}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Product</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.product_name}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Quantity</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.quantity}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Date</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.date | date:'shortDate'}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Quotation</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.status}}</label>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
+
+        <br>
+        <div style="margin: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="field_value"><u> Send invoice</u></label>
+                    <br>
+                    <table id="designertbl" class="table table-bordered  tbl">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th>Order Status</th>
+                                <th>Action</th>
+                                <th>Invoice</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tblrow">
+                            <tr>
+                                <td><b>{{ userdetails.full_name }}</b> </td>
+                                <td class="tblButton">
+                                    <input (change)="onFileChange($event)" class="uploadimagebtn btn btn-block btn-info"
+                                        title="Upload" type="file" id="myFile" name="filename">
+                                    <!-- <button (click)="onUpload()" type="button" title="Upload" class="btn"
+                                        style="color: white;">
+                                        Upload
+                                    </button> -->
+                                </td>
+                                <td class="tblButton">
+                                    <b>Not Sent</b>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+</div>

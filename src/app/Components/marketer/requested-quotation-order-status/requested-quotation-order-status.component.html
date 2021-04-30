@@ -1,0 +1,124 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+
+    <div class="col-md-8">
+        <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+
+        <div class="rightside">
+            <div style="margin: 30px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Request ID</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation._id}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Product</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.product_name}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Supplier</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{userdetails.full_name}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Quantity</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.quantity}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Date</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.date | date:'shortDate' }}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Quotation Status</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">{{quotation.status}}</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Quotation</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="field_value">Not Received</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="field_value"><u> Place order </u></label>
+                    <br>
+                    <table id="designertbl" class="table table-bordered tbl">
+                        <thead>
+                            <tr style="text-align: center; font-size: 20px;">
+                                <th>Order Status</th>
+                                <th>Action</th>
+                                <th>Invoice</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="tblrow">
+                            <tr>
+                                <td style="font-size: 18px;">{{ userdetails.full_name }}</td>
+                                <td class="tblButton">
+                                    <button (click)="acceptClick(userdetails.to)" type="button" title="Upload"
+                                        class="btn" style="color: white; float: left; width: 50%;">
+                                        Accept
+                                    </button>
+                                    <button type="button" title="Upload" class="btn"
+                                        style="color: white; float: right; width: 50%;">
+                                        Reject
+                                    </button>
+                                </td>
+                                <td class="tblButton">
+                                    <button type="button" title="Upload" class="btn"
+                                        style="color: white; float: center; width: 50%;">
+
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+</div>

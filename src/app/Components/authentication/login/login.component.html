@@ -1,0 +1,42 @@
+<div class="split left">
+	<div class="centered">
+		<img class="logo" src="../../../../assets/img/logo_new.jpeg">
+	</div>
+</div>
+
+
+
+<div class="split right bg">
+	<div class="centered">
+		<form class="form" [formGroup]="loginForm" (ngSubmit)="onSignInSubmit()">
+			<img class="icon_img" src="../../../../assets/img/avatar.svg">
+			<h2 class="title">Login</h2>
+			<br>
+			<br>
+			<div *ngIf="param != 'admin'">
+				<label style="display: inline-block;">Do no have an account yet? </label>
+				<a style="display: inline-block; padding-left: 20px;" (click)="registerClick()"><u>Register</u> </a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<div class="input-div one">
+				<div class="div">
+					<input formControlName="Login_Email" type="text" class="input" placeholder="Email Address">
+				</div>
+			</div>
+			<br>
+			<br>
+			<div class="input-div pass">
+				<div class="div">
+					<input formControlName="Login_Password" type="password" class="input" placeholder="Password">
+				</div>
+			</div>
+			<a (click)="forgotPasswordClick()">Forgot Password?</a>
+			<input type="submit" class="btn" value="Login">
+		</form>
+
+	</div>
+</div>

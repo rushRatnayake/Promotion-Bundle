@@ -1,0 +1,60 @@
+<!-- <div class="bg"> -->
+
+<div style="height: 100px;"></div>
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <input style="width: 80%;" type="text" class="form-control" placeholder="Search Product">
+    </div>
+    <div class="col-md-6">
+        <label class="field_name sameline">Search by Status</label>
+        <ng-select class="sameline space" [items]="statusList" bindLabel="name" bindValue="id"
+            placeholder="Select Status" appendTo="body" [multiple]="false">
+        </ng-select>
+    </div>
+
+</div>
+
+<br>
+<div class="card">
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="designertbl" class="table table-bordered table-hover tbl">
+            <thead>
+                <tr>
+                    <th>Requested ID</th>
+                    <th>Product</th>
+                    <th>Supplier</th>
+                    <th>Quantity</th>
+                    <th>Date</th>
+                    <th>Quotation Status</th>
+                    <th>Quotation</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of quotationList">
+                    <td>{{ list._id }}</td>
+                    <td><a routerLink="/marketer/catalogue_single_product"><u>{{ list.product_name }}</u></a></td>
+                    <td><a routerLink="/marketer/supplier_profile_view/{{list.to}}"><u>{{ list.supplier }}</u></a></td>
+                    <td>{{ list.quantity }}</td>
+                    <td>{{ list.date }}</td>
+                    <td>{{ list.status }}</td>
+                    <td>{{ list.quotation }}</td>
+                    <td class="tblButton">
+                        <button type="button" title="View Order Status" class="btn" (click)="viewOrderStatus(list)">
+                            View Order Status
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+<!-- </div> -->

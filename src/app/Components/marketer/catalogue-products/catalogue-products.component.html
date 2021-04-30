@@ -1,0 +1,46 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <input style="margin-left: 10%;" type="text" class="form-control" placeholder="Search Product By Name" name="search"
+            [(ngModel)]="searchValue" (ngModelChange)="searchProduct()">
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <label class="label_style">View by Category:</label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <ng-select [items]="categoryList" bindLabel="name" bindValue="id" placeholder="Select Category"
+                appendTo="body" [multiple]="false"  [(ngModel)]="category" (ngModelChange)="filterByCategory()" [clearable]="false">
+            </ng-select>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4" *ngFor="let list of cardList">
+            <div class="card" style="width: 80%; margin-left: 10%;">
+                <div class="card">
+                    <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
+                        alt="Edit">
+                    <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+                    <div class="card-body">
+                        <button class="viewbtn" (click)="navigateToProduct(list)">View Product</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="product_detail">{{list.name}}</label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="product_detail">{{list.price}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+</div>

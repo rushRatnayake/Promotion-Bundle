@@ -1,0 +1,15 @@
+.bg {
+  /* background-image: url(../../../../assets/img/marketer_bg.png);
+  height: 1000px; */
+
+  font-size: 18px;
+}
+
+.btn {
+  background-image: linear-gradient(to right, #113e62, #3173a8, #3173a8);
+}
+
+.btn {
+  border: 2px solid white; /* Green */
+  color: white;
+}

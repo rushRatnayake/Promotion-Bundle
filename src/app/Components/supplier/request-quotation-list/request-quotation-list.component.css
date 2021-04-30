@@ -1,0 +1,18 @@
+.btn {
+  display: block;
+  width: 80%;
+  margin-left: 20px;
+  margin-right: -10px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #3173a8, #113e62, #3173a8);
+  background-size: 200%;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s;
+}

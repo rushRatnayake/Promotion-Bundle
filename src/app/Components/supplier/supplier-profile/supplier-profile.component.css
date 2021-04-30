@@ -1,0 +1,16 @@
+.field_name {
+  font-size: 24px;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.icon_img {
+}
+
+.btn_image {
+  height: 35px;
+  width: 35px;
+}

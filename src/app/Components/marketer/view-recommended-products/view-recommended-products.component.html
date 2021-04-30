@@ -1,0 +1,45 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <label class="label_style sameline">Recommended Products for My Company
+                Products:</label>
+            <ng-select class="sameline space" [items]="companyProductList" bindLabel="name" bindValue="_id"
+                placeholder="Select Company Product" appendTo="body" [multiple]="false"
+                (change)="onProductChange($event)">
+            </ng-select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4 col-sm-4" *ngFor="let list of cardList">
+            <div class="card" style="width: 80%; margin-left: 10%;">
+                <div class="card">
+                    <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
+                    alt="Edit">
+                <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+                    <div class="card-body">
+                        <button class="viewbtn" (click)="navigateToProduct(list)">View Product</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <label class="product_detail">{{list.name}}</label>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label class="product_detail">{{list.price}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+</div>

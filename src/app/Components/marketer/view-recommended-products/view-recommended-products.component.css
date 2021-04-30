@@ -1,0 +1,45 @@
+.bg {
+  /* background-image: url(../../../../assets/img/marketer_bg.png); */
+}
+
+.viewbtn {
+  width: 100%;
+  background-color: #227cc3;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.label_style {
+  font-size: 20px;
+  margin-left: 4%;
+}
+
+.sameline {
+  display: inline-block;
+}
+.space {
+  margin-left: 20px;
+}
+
+.product_detail {
+  text-align: center;
+  width: 100%;
+}
+
+.star-active {
+  color: #fbc02d;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.star-active:hover {
+  color: #f9a825;
+  cursor: pointer;
+}
+
+.cover {
+  object-fit: contain;
+  height: 250px;
+}

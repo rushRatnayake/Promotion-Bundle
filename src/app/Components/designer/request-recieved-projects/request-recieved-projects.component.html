@@ -1,0 +1,124 @@
+<div style="height: 100px;"></div>
+<div class="bg">
+    <br>
+    <!-- <div class="bg"> -->
+
+    <div class="row">
+        <!-- detail view -->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="field_name">Period of Availability</label>
+                </div>
+                <div class="col-md-6">
+                    <ng-select (change)="onChange1($event)" [items]="availableList" bindLabel="name" bindValue="id"
+                        [ngModel]="availability" placeholder="Select Period of Availability" appendTo="body"
+                        [multiple]="false">
+                    </ng-select>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="field_name">Minimum Pay(Rs.)</label>
+                </div>
+                <div class="col-md-6">
+                    <input (change)="onChange2($event)" [ngModel]="min_pay" type="number" class="form-control"
+                        placeholder="Minimum Pay(Rs.)">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+        </div>
+        <!-- image view -->
+        <div class="col-md-6">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button (click)="updateSupplierDetail()" type="button"
+                        class="btn btn-block btn-success ">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <label class="field_name">Search by Status</label>
+        </div>
+        <div class="col-md-3">
+            <ng-select (change)="selectStatus($event)" [items]="statusList" bindLabel="name" bindValue="id"
+                placeholder="Select Status" appendTo="body" [multiple]="false">
+            </ng-select>
+        </div>
+    </div>
+
+    <br>
+    <div class="card">
+
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="suppliertbl" class="table table-bordered table-hover tbl">
+                <thead>
+                    <tr>
+                        <th>Design Type</th>
+                        <th>Total Pay Range</th>
+                        <th>Date</th>
+                        <th style="width: 300px; text-align: center;">Status</th>
+                        <th>Product Images</th>
+                        <th>No. Images</th>
+                        <th>Marketer's Email</th>
+                        <th>Design Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let list of projectList">
+                        <td>{{ list.type }}</td>
+                        <td>{{ list.range }}</td>
+                        <td>{{ list.created_at | date:'shortDate' }}</td>
+                        <td>
+                            <!-- {{ list.status }} -->
+                            <button *ngIf="list.status == accepted" type="button" title="Accept" class="btn"
+                                style="color: white; float: left; width: 100%; font-size: 12px;">
+                                Accepted
+                            </button>
+                            <button (click)="onAccept(list)" type="button" title="Upload" class="btn"
+                                *ngIf="list.status == pending"
+                                style="color: white; float: left; width: 50%; font-size: 12px;">
+                                Accept
+                            </button>
+                            <button (click)="onReject(list)" type="button" title="Upload" class="btn"
+                                *ngIf="list.status == pending"
+                                style="color: white; float: right; width: 50%;font-size: 12px;">
+                                Reject
+                            </button>
+
+                        </td>
+                        <td>
+                            <input (change)="onFileChange($event, list)" class="uploadimagebtn btn btn-block btn-info"
+                                title="Upload" type="file" id="myFile" name="filename">
+                            <!-- <button type="button" title="Upload" class="btn" style="color: white;  width: 40%;">
+                                <i class="fas fa-folder"></i>
+                            </button> -->
+                        </td>
+                        <!-- <td>{{ list.images.length || 0}}</td> -->
+                        <td>0</td>
+                        <td>email</td>
+                        <td>{{ list.due_date | date:'shortDate' }}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

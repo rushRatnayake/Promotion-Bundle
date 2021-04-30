@@ -1,0 +1,53 @@
+.bg {
+  /* background-image: url(../../../../assets/img/request_design_bg.png); */
+  /* height: 200px; */
+}
+
+.field_name {
+  font-size: 24px;
+}
+
+.field_value {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.icon_img {
+}
+
+.btn_image {
+  height: 35px;
+  width: 35px;
+}
+
+.uploadimagebtn {
+  width: 100%;
+}
+
+.centerview {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.submitbtn {
+  width: 100%;
+  background-color: #227cc3;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.rowfontstyle {
+  color: black;
+}
+
+.tbl {
+  background-color: white;
+}

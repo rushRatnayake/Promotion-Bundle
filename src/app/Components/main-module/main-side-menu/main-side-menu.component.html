@@ -1,0 +1,84 @@
+<div class="border1 w3-sidebar w3-light-grey w3-bar-block scroll1" style="width: 300px;">
+  <br>
+  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="image">
+      <img *ngIf="!imageToShow" src="../../../../assets/img/user.jpg" class="userimage" alt="User Image">
+      <img *ngIf="imageToShow" class="userimage" [src]="imageToShow">
+
+    </div>
+
+    <div class="userdetails">
+      {{currentUser.full_name}}
+      <br>
+      {{currentUser.designation}}
+    </div>
+
+  </div>
+
+
+  <div class="sidenav1" *ngIf="currentUser.role==admin">
+    <br>
+
+    <a class="w3-bar-item w3-button" routerLink="/system_admin_module/market_dashboard">Market Dashboard</a>
+    <a class="w3-bar-item w3-button" routerLink="/system_admin_module/marketer_list">Marketer List</a>
+    <a class="w3-bar-item w3-button" routerLink="/system_admin_module/supplier_list">Supplier List</a>
+    <a class="w3-bar-item w3-button" routerLink="/system_admin_module/graphicdesigner_list">Graphics Designer List</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="sidenav1" *ngIf="currentUser.role==marketer">
+    <br>
+
+    <a class="w3-bar-item w3-button" routerLink="/marketer/dashboard">Dashboard</a>
+
+    <a class="w3-bar-item w3-button" routerLink="/marketer/profile">Profile</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/catalogue_products">Catalogue Products</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/view_recommended_products">View Recommended Products</a>
+    <!-- <a class="w3-bar-item w3-button" routerLink="/marketer/catalogue_products">Catalogue Products</a> -->
+    <a class="w3-bar-item w3-button" routerLink="/marketer/manage_company_products">Manage Company Products</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/requested_quotations">Requested Quotations</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/request_for_design">Request For Design</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/supplier_profiles">Supplier Profiles</a>
+    <a class="w3-bar-item w3-button" routerLink="/marketer/designer_profiles">Designer Profiles</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="sidenav1" *ngIf="currentUser.role==supplier">
+    <br>
+
+    <a class="w3-bar-item w3-button" routerLink="/supplier/profile">Profile</a>
+    <a class="w3-bar-item w3-button" routerLink="/supplier/manage_products">Manage Products</a>
+    <a class="w3-bar-item w3-button" routerLink="/supplier/quotation_list">Requested Quotations</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <div class="sidenav1" *ngIf="currentUser.role==designer">
+    <br>
+
+    <a class="w3-bar-item w3-button" routerLink="/graphic_designer/profile">Profile</a>
+    <a class="w3-bar-item w3-button" routerLink="/graphic_designer/projects">Request and Received Projetcs</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+
+</div>

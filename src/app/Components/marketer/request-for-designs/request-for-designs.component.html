@@ -1,0 +1,92 @@
+<div style="height: 100px;"></div>
+<div class="bg">
+
+    <div class="col-md-12">
+        <div class="centerview">
+            <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px;">
+
+                <div style="margin: 30px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="field_name">Design Type</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" formControlName="type" class="form-control" placeholder="Design Type">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="field_name">Total Pay Range</label>
+                        </div>
+                        <div class="col-md-6">
+                            <ng-select [items]="payRangelist" bindLabel="name" bindValue="id"
+                                placeholder="Total Pay Range" appendTo="body" [multiple]="false"
+                                formControlName="pay_range">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="field_name">Number of Images</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" formControlName="no_images" class="form-control"
+                                placeholder="Number of Images">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="field_name">Design Required Deadline</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" formControlName="due_date" class="form-control"
+                                placeholder="Number of Images">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="submitbtn">Submit</button>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="suppliertbl" class="table table-bordered table-hover tbl">
+            <thead>
+                <tr>
+                    <th>Design type</th>
+                    <th>Pay Range</th>
+                    <th>Deadline Date</th>
+                    <th>Requests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of designList">
+                    <td><a class="rowfontstyle" routerLink="/marketer/design_view/{{list._id}}/{{list.type}}"><u>{{
+                                list.type
+                                }}</u></a>
+                    </td>
+                    <td>{{ list.pay_range }}</td>
+                    <td>{{ list.due_date | date:'shortDate' }}</td>
+                    <td>{{ list.no_images }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>

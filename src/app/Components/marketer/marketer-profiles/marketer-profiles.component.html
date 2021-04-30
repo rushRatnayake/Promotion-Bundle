@@ -1,0 +1,118 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+
+
+    <br>
+    <!-- <div class="bg"> -->
+
+    <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px;">
+        <div class="row">
+            <!-- detail view -->
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Full Name</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="full_name" type="text" class="form-control" placeholder="Full Name">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Company</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="company" type="text" class="form-control" placeholder="Company">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Contact Number</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="contact_no" type="number" class="form-control"
+                            placeholder="Contact Number">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Email address</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="email" type="text" class="form-control" placeholder="Email address">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="field_name">Designation</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="designation" type="text" class="form-control" placeholder="Designation">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row" hidden>
+                    <div class="col-md-6">
+                        <label class="field_name">Password</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input formControlName="full_name" type="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+            <!-- image view -->
+            <div class="col-md-4">
+
+                <div class="row">
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-block btn-success ">Save</button>
+                    </div>
+                    <!-- <div class="col-md-6">
+                    <img class="btn_image" src="../../../../assets/img/edit_icon.png" alt="Edit"> -->
+                    <!-- <button type="button" (click)="editClick()">
+                </button> -->
+                    <!-- </div> -->
+                </div>
+
+                <br>
+
+                <div class="icon_img">
+                    <img class="icon_img" [src]="imageToShow1" *ngIf="imageToShow1">
+                    <input (change)="onFileChange1($event)" class="uploadimagebtn btn btn-block btn-info" type="file"
+                        id="myFile1" name="filename1">
+                </div>
+                <br>
+                <div class="icon_img">
+                    <img class="icon_img" [src]="imageToShow2" *ngIf="imageToShow2">
+                    <input (change)="onFileChange2($event)" class="uploadimagebtn btn btn-block btn-info" type="file"
+                        id="myFile2" name="filename2">
+                </div>
+                <br>
+                <br>
+                <br>
+
+                <!-- <img class="icon_img" src="../../../../../assets/img/profile.png"> -->
+            </div>
+        </div>
+
+        <!-- </div> -->
+
+    </form>
+
+
+</div>

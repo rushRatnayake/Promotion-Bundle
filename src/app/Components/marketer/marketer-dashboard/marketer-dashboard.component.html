@@ -1,0 +1,105 @@
+<div class="bg">
+
+    <div style="height: 100px;"></div>
+    <br>
+
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <div class="card maincard_body">
+                <div class="card-header">Rankings</div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Overall Orders Placed</div>
+                <div class="card-body maincard_content largetext">{{dashboardDetails.overall_orders || 0}}</div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Top 3 Rated Suppliers</div>
+                <div *ngFor="let list of dashboardDetails.top_suppliers">
+                    <div class="card-body maincard_content maincard_content_small">{{list}}</div>
+                    <hr>
+
+                </div>
+                <!-- <div class="card-body maincard_content maincard_content_small">Suneth Perera</div>
+                <hr>
+                <div class="card-body maincard_content maincard_content_small">Nanath Jayawickrama</div>
+                <hr> -->
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Top 3 Rated Designers</div>
+                <div *ngFor="let list of dashboardDetails.top_suppliers">
+                    <div class="card-body maincard_content maincard_content_small">{{list}}</div>
+                    <hr>
+                </div>
+                <!-- <div class="card-body maincard_content maincard_content_small">Roshan G</div>
+                <hr>
+                <div class="card-body maincard_content maincard_content_small">Thiviru</div>
+                <hr> -->
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="card maincard_body">
+                <div class="card-header">Personal Performance</div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Quotations Requested</div>
+                <div class="card-body maincard_content largetext">{{dashboardDetails.quotations_requested || 0}}</div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Designs Requested</div>
+                <div class="card-body maincard_content largetext">{{dashboardDetails.designs_requests || 0}}</div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header maincard_body">Invoices Received</div>
+                <div class="card-body maincard_content largetext">{{dashboardDetails.invoices_received || 0}}</div>
+                <hr>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="card maincard_body">
+                <div class="card-header">Rewards Recieved</div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="card discountcard_body">
+                <div *ngFor="let list of dashboardDetails.rewards_received">
+                    <hr>
+                    <div
+                        class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext boldtext">
+                        {{list}}</div>
+                    <hr>
+                </div>
+                <!--                 
+                <div
+                    class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext">
+                    5% discount</div>
+                <hr>
+                <div
+                    class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext boldtext">
+                    2% discount</div>
+                <hr>
+                <div
+                    class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext">
+                    7% discount</div>
+                <hr>
+                <div
+                    class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext">
+                    Free Design</div>
+                <hr> -->
+            </div>
+        </div>
+
+    </div>
+
+</div>

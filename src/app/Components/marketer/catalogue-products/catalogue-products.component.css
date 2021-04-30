@@ -1,0 +1,27 @@
+.bg {
+  /* background-image: url(../../../../assets/img/marketer_bg.png); */
+}
+
+.viewbtn {
+  width: 100%;
+  background-color: #227cc3;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.label_style {
+  font-size: 20px;
+  float: right;
+}
+
+.product_detail {
+  text-align: center;
+  width: 100%;
+}
+
+.cover {
+  object-fit: contain;
+  height: 250px;
+}

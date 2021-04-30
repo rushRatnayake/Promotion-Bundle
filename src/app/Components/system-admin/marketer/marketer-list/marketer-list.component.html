@@ -1,0 +1,40 @@
+<div style="height: 100px;"></div>
+
+<h2>Marketer List</h2>
+
+<br>
+<div class="card">
+
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="marketertbl" class="table table-bordered table-hover tbl">
+            <thead>
+                <tr>
+                    <th>Marketer ID</th>
+                    <th>Marketer</th>
+                    <th>Date Registered</th>
+                    <th>Status</th>
+                    <th>Last Login</th>
+                    <th>Remove Marketer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let list of marketerList">
+                    <td>{{ list._id }}</td>
+                    <td (click)="viewProfile(list)"><u>{{ list.full_name }}</u> </td>
+                    <td>{{ list.created_at | date:'shortDate' }}</td>
+                    <td>{{ list.status }}</td>
+                    <td>{{ list.last_login }}</td>
+                    <td class="tblButton">
+                        <button (click)="onDelete(list)" type="button" title="Edit Customer" class="btn table_button_clr">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->

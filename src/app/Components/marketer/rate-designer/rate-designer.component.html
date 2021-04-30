@@ -1,0 +1,67 @@
+<div style="height: 100px;"></div>
+<img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+
+<div style="padding-top: 100px; padding-right: 25%; padding-left: 25%;">
+
+    <div class="row">
+        <div class="col-md-8">
+            <label class="field_name">Creativity Skills</label>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12">
+                <ngb-rating class="star-active" [max]="5" [(rate)]="selected1" (hover)="hovered=$event"
+                    (leave)="hovered=0" [readonly]="readonly">
+                </ngb-rating>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-8">
+            <label class="field_name">Technical skills on designing</label>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12">
+                <ngb-rating class="star-active" [max]="5" [(rate)]="selected2" (hover)="hovered=$event"
+                    (leave)="hovered=0" [readonly]="readonly">
+                </ngb-rating>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-8">
+            <label class="field_name">Business and people skills</label>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12">
+                <ngb-rating class="star-active" [max]="5" [(rate)]="selected3" (hover)="hovered=$event"
+                    (leave)="hovered=0" [readonly]="readonly">
+                </ngb-rating>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-8">
+            <label class="field_name">Focus under pressure</label>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12">
+                <ngb-rating class="star-active" [max]="5" [(rate)]="selected4" (hover)="hovered=$event"
+                    (leave)="hovered=0" [readonly]="readonly">
+                </ngb-rating>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+            <button (click)="onSubmit()" class="btn btn-block btn-info">Submit</button>
+        </div>
+    </div>
+    <br>
+</div>
