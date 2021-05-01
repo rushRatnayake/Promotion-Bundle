@@ -68,20 +68,11 @@
             </label>
           </div>
         </div>
-
-        <div class="row" *ngIf="!invoiceAvailable">
-          <div class="col-md-6">
-            <label class="field_name">Invoice</label>
-          </div>
-          <div class="col-md-6">
-            <label class="field_value">No invoice recieved</label>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <hr class="mx-4" >
-  <div class="col-md-12 mt-5" *ngIf="invoiceAvailable">
+  <div class="col-md-12 mt-5">
     <div class="row">
       <div class="col-md-12">
         <h3><u> Place order </u></h3>
@@ -108,11 +99,21 @@
               <td *ngIf="purchaseOrder == 'accepted'">Accepted</td>
               <td *ngIf="purchaseOrder == 'rejected'">Rejected</td>
               <td class="tblButton text-center">
-                <a href="http://35.198.253.141/{{quotation.invoice}}" target="_blank">
-                  <button type="button" title="Upload" class="btn" style="color: white; float: center; width: 50%;background: #1b669f;">
-                    <i class="fas fa-copy"></i>
-                  </button>
-                </a>
+                <div class="invoiceAvailable">
+                    <a href="http://35.198.253.141/{{quotation.invoice}}" target="_blank">
+                      <button type="button" title="Upload" class="btn" style="color: white; float: center; width: 50%;background: #1b669f;">
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </a>
+                </div>
+                <div class="row" *ngIf="!invoiceAvailable">
+                    <div class="col-md-6">
+                      <label class="field_name">Invoice</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="field_value">No invoice recieved</label>
+                    </div>
+                  </div>
               </td>
             </tr>
           </tbody>
