@@ -12,7 +12,6 @@
             <label class="field_value">{{quotation._id}}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Product</label>
@@ -21,7 +20,6 @@
             <label class="field_value">{{quotation.product_name}}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Supplier</label>
@@ -30,7 +28,6 @@
             <label class="field_value">{{userdetails.full_name}}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Quantity</label>
@@ -39,7 +36,6 @@
             <label class="field_value">{{quotation.quantity}}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Date</label>
@@ -48,7 +44,6 @@
             <label class="field_value">{{quotation.date | date:'shortDate' }}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Quotation Status</label>
@@ -57,7 +52,6 @@
             <label class="field_value">{{quotation.status | titlecase}}</label>
           </div>
         </div>
-        <br>
         <div class="row">
           <div class="col-md-6">
             <label class="field_name">Quotation</label>
@@ -76,60 +70,46 @@
         </div>
       </div>
     </div>
-
-    <div style="margin: 30px;">
-      <div class="row">
-        <div class="col-md-12" >
-          <label class="field_value"><u> Place order </u></label>
-          <br>
-          <table id="designertbl" class="table table-bordered tbl">
-            <thead>
-              <tr style="text-align: center; font-size: 20px;">
-                <th>Supplier</th>
-                <th>Action</th>
-                <th>Invoice</th>
-              </tr>
-            </thead>
-
-            <tbody class="tblrow">
-              <tr>
-                <td style="font-size: 18px;">{{ userdetails.full_name }}</td>
-                <td class="tblButton">
-                  <button (click)="acceptClick(userdetails.to)" type="button" title="Upload" class="btn"
-                    style="color: white; float: left; width: 50%;">
-                    Accept
+  </div>
+  <hr class="mx-4" *ngIf="invoiceAvailable">
+  <div class="col-md-12 mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h3><u> Place order </u></h3>
+        <table id="designertbl" class="table table-bordered tbl">
+          <thead>
+            <tr style="text-align: center; font-size: 20px;">
+              <th>Supplier</th>
+              <th>Action</th>
+              <th>Invoice</th>
+            </tr>
+          </thead>
+          <tbody class="">
+            <tr>
+              <td style="font-size: 18px;">{{ userdetails.full_name }}</td>
+              <td class="tblButton">
+                <button (click)="acceptClick(userdetails.to)" type="button" title="Upload" class="btn"
+                  style="color: white; float: left; width: 50%;background: #1b669f">
+                  Accept
+                </button>
+                <button type="button" title="Upload" class="btn" style="color: white; float: right; width: 50%;background: #1b669f">
+                  Reject
+                </button>
+              </td>
+              <td class="tblButton text-center">
+                <a href="http://35.198.253.141/{{quotation.invoice}}" target="_blank">
+                  <button type="button" title="Upload" class="btn" style="color: white; float: center; width: 50%;background: #1b669f;">
+                    <i class="fas fa-copy"></i>
                   </button>
-                  <button type="button" title="Upload" class="btn" style="color: white; float: right; width: 50%;">
-                    Reject
-                  </button>
-                </td>
-                <td class="tblButton">
-                  <a href="http://35.198.253.141/{{quotation.invoice}}" target="_blank">
-                    <button type="button" title="Upload" class="btn" style="color: white; float: center; width: 50%;">
-
-                      <i class="fas fa-copy"></i>
-                    </button>
-                  </a>
-                </td>
-
-
-              </tr>
-            </tbody>
-
-          </table>
-        </div>
-        <div *ngIf="!invoiceAvailable">
-          <label class="field_value">No invoice recieved</label>
-
-
-        </div>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="!invoiceAvailable">
+        <label class="field_value">No invoice recieved</label>
       </div>
     </div>
-
-    <br>
-    <br>
-    <br>
-
   </div>
-
 </div>
