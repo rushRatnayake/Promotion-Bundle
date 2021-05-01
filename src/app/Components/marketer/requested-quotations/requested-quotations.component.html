@@ -4,24 +4,26 @@
 
 <br>
 <div class="row">
-    <div class="col-md-6">
-        <input style="width: 80%;" type="text" class="form-control" placeholder="Search Product">
+    <div class="col-md-4 col-sm-4">
+        <input style="margin-left: 7%;" type="text" class="form-control" placeholder="Search Product">
     </div>
-    <div class="col-md-6">
-        <label class="field_name sameline">Search by Status</label>
-        <ng-select class="sameline space" [items]="statusList" bindLabel="name" bindValue="id"
-            placeholder="Select Status" appendTo="body" [multiple]="false">
-        </ng-select>
-    </div>
+    <div class="col-md-3 col-sm-3">
+            <label class="field_name sameline">Search by Status</label>
+        </div>
+        <div class="col-md-2 col-sm-2">
+                <ng-select class="sameline space" [items]="statusList" bindLabel="name" bindValue="id"
+                placeholder="Select Status" appendTo="body" [multiple]="false">
+            </ng-select>
+        </div>
 
 </div>
 
 <br>
-<div class="card">
+<div class="" style="margin-left: 8px;">
 
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="designertbl" class="table table-bordered table-hover tbl">
+        <table id="designertbl" class="table table-bordered table-hover tbl" style="background-color: whitesmoke;">
             <thead>
                 <tr>
                     <th>Requested ID</th>

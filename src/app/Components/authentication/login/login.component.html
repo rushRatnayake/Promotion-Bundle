@@ -1,28 +1,39 @@
 <div class="split left">
 	<div class="centered">
-		<img class="logo" src="../../../../assets/img/logo_new.jpeg">
+		<img class="logo" src="../../../../assets/img/logo_new.jpeg" style="margin-bottom: 30px;">
+		<div style=" color: white; font-size: 140%; text-align: center; font-style:italic ;"
+			*ngIf="param == 'marketer'"><strong><q>This platform will help you provide leads and execution of better
+					promotions. The
+					internal processes have been
+					refined and automated to your simplicity. The ease of create your own bundle promotion for the
+					company,
+					all in a
+					single place with high quality suppliers and designers is indeed a necessity.</q></strong>
+		</div>
+		<div style=" color: white; font-size: 140%; text-align: center; font-style:italic ;"
+			*ngIf="param == 'supplier'"><strong><q>Not getting orders for your valuable products? Log on to The
+					Promotion Bundler and find a high capacity Marketers to supply your products for 3rd party bundle
+					promotion.</q></strong>
+		</div>
+		<div style=" color: white; font-size: 140%; text-align: center; font-style:italic ;"
+			*ngIf="param == 'designer'"><strong><q>The Promotion Bundler team has understood the scope for freelance
+					graphic designers to be minimal. Hence, we have provided you with many opportunities to collaborate
+					with Marketers available on the platform, who seek to design their bundle package creation or even
+					social media advertisement purposes and so.</q></strong>
+		</div>
 	</div>
 </div>
 
-
-
-<div class="split right bg">
+<div class="split right bg" >
 	<div class="centered">
 		<form class="form" [formGroup]="loginForm" (ngSubmit)="onSignInSubmit()">
 			<img class="icon_img" src="../../../../assets/img/avatar.svg">
-			<h2 class="title">Login</h2>
-			<br>
-			<br>
+			<h2 class="title" style="margin-bottom:50px">Login</h2>
 			<div *ngIf="param != 'admin'">
 				<label style="display: inline-block;">Do no have an account yet? </label>
 				<a style="display: inline-block; padding-left: 20px;" (click)="registerClick()"><u>Register</u> </a>
 			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="input-div one">
+			<div class="input-div one" style="margin-top:50px">
 				<div class="div">
 					<input formControlName="Login_Email" type="text" class="input" placeholder="Email Address">
 				</div>

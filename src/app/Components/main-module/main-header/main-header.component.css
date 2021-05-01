@@ -31,11 +31,12 @@
 }
 
 .topbar img {
-  /* margin-left: 30px; */
+  margin-left: 4.2%;
   width: 150px;
   /* height: 100%; */
   border-radius: 8px;
-  /* border: 1px solid black;*/
+  /* border: 1px solid black; */
+  padding: 50;
 }
 
 /* .top {

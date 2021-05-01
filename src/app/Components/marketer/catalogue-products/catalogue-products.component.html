@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-4 col-sm-4">
-            <input style="margin-left: 10%;" type="text" class="form-control" placeholder="Search Product By Name" name="search"
+            <input style="margin-left: 8%;" type="text" class="form-control" placeholder="Search Product By Name" name="search"
             [(ngModel)]="searchValue" (ngModelChange)="searchProduct()">
         </div>
         <div class="col-md-3 col-sm-3">
@@ -20,7 +20,7 @@
     <br>
 
     <div class="row justify-content-around">
-        <div class="col-lg-4" style="min-width: 400px;max-width: 500px;" *ngFor="let list of cardList">
+        <div class="col-md-4 col-sm-8 col-lg-2" style="min-width: 400px;max-width: 500px;" *ngFor="let list of cardList">
             <div class="card">
                 <div class="card-header" style="font-size: 1.1em;"><b>{{list.name}}</b></div>
                 <div class="card-body">
