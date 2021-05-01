@@ -32,6 +32,7 @@ export class RequestRecievedProjectsComponent implements OnInit {
     { id: "accepted", name: "accepted" },
   ];
 
+  requestStatus = "";
   projectList: any = [
     // {
     //   type: "Full Artwork", range: "3000", date: "2021-01-01", status: "pending", image: "", no_of_images: "4", deadline: "2021-03-01"
@@ -64,7 +65,7 @@ export class RequestRecievedProjectsComponent implements OnInit {
     // await this.designService.getDesignSearch(this.period, this.minpay, this.status).subscribe(data => {
     await this.designService.getDesignSearch(status).subscribe(data => {
       this.projectList = data.payload.designs;
-      console.log(this.projectList);
+      debugger
     });
 
     await this.designService.getRequestedDesigns().subscribe(data=>{
