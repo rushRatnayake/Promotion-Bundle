@@ -125,7 +125,7 @@ export class AddEditProductComponent implements OnInit {
     }
     if (!this.formHeader?.invalid) {
       this.checked = false;
-
+      debugger
       if (this.id != undefined) { // UPDATE
         this.productService.updateProduct(this.formHeader?.value, this.id).subscribe(data => {
           if (data.success == true) {
@@ -171,14 +171,12 @@ export class AddEditProductComponent implements OnInit {
       const formData = new FormData();
       formData.append('file', file);
       this.commonService.postImage(formData).subscribe(data => {
-
         this.formHeader.patchValue({
           "img_url": data.payload.file_path
         })
-        this.getImage();
       });
-
     }
+    this.getImage();
     const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
       const [file] = event.target.files;
@@ -218,7 +216,4 @@ export class AddEditProductComponent implements OnInit {
       reader.readAsDataURL(image);
     }
   }
-
-
-
 }
