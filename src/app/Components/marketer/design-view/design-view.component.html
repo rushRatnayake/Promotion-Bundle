@@ -5,13 +5,13 @@
     <br>
     <div class="row">
         <div class="col-md-12">
-            <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+            <!-- <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()"> -->
 
             <label class="field_name">{{design_type}}</label>
         </div>
     </div>
     <br>
-    <div class="card-body">
+    <div class="card-body" *ngIf="designerAvailability">
         <table id="suppliertbl" class="table table-bordered table-hover tbl bg-white" style="text-align: center;">
             <thead>
                 <tr>
@@ -56,6 +56,9 @@
             </tbody>
 
         </table>
+    </div>
+    <div class="card-body" *ngIf="!designerAvailability">
+        <label>No Designers Available</label>
     </div>
 
 </div>

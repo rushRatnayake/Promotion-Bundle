@@ -43,7 +43,7 @@
           <td><a routerLink="/marketer/supplier_profile_view/{{list.to}}"><u>{{ list.supplier }}</u></a></td>
           <td>{{ list.quantity }}</td>
           <td>{{ list.date }}</td>
-          <td>{{ list.status  }}</td>
+          <td>{{ list.status | titlecase  }}</td>
           <td>{{ list.file == null || list.file == "" ? "Not Recieved" : "Recieved"}}</td>
           <td class="tblButton">
             <button type="button" title="View Order Status" class="btn" (click)="viewOrderStatus(list)">

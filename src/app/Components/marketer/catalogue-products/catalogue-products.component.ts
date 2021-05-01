@@ -38,7 +38,6 @@ export class CatalogueProductsComponent implements OnInit {
   }
 
   navigateToProduct(list: any) {
-    // this.router.navigate(['supplier/edit_product/', list._id, "view"]);
     this.router.navigate(['marketer/catalogue_single_product/', list._id]);
   }
 

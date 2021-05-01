@@ -61,17 +61,15 @@
         </div>
       </div>
       <hr>
-      <p>Company logo change</p>
-      <div class="row px-3 pb-5">
-        <!-- image view -->
-        <!-- <div class="col-md-4"> -->
-          <div class="icon_img px-3">
+      <div class="col margin-left:100px">
+        <div class="row px-3 py-4 mb-5">
+          <div class="icon_img col-md-4 text-center">
+            <p>Company logo change</p>
             <img class="icon_img" [src]="imageToShow2" *ngIf="imageToShow2">
             <input (change)="onFileChange2($event)" class="uploadimagebtn btn btn-block btn-info mt-4" type="file"
               id="myFile2" name="filename2">
           </div>
-          <!-- <img class="icon_img" src="../../../../../assets/img/profile.png"> -->
-        <!-- </div> -->
+        </div>
       </div>
       <div class="row pt-5">
         <div class="col-md-12">

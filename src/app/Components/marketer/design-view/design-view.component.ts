@@ -6,6 +6,7 @@ import { DesignService } from 'src/app/Services/design/design.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from 'src/app/Services/common/common.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-design-view',
@@ -27,6 +28,7 @@ export class DesignViewComponent implements OnInit {
     }
   ]
 
+  designerAvailability = false;
   constructor(
     private router: Router,
     private location: Location,
@@ -54,6 +56,11 @@ export class DesignViewComponent implements OnInit {
   async loadDetails() {
     await this.designService.getAcceptor(this.design_id).subscribe(data => {
       this.designerList = data.payload.acceptors;
+      if (this.designerList.length != 0){
+        this.designerAvailability = true;
+      }else{
+        this.designerAvailability =false;
+      }
 
     });
   }

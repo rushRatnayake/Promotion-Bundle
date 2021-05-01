@@ -37,6 +37,7 @@ export class RequestedQuotationsComponent implements OnInit {
   async loadDetails() {
     await this.quotationService.getAllQuotations().subscribe(data => {
       this.quotationList = data.payload.quotations;
+      debugger
       let line = 0;
       this.quotationList.forEach(async element => {
         this.getSupplierName(element.to, line);

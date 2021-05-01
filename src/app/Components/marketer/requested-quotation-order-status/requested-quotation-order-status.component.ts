@@ -21,6 +21,7 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
   userdetails: any;
   quotationAvailable :boolean = false;
   invoiceAvailable : boolean = false;
+  purchaseOrder="";
   constructor(
     private location: Location,
     private quotationService: QuotationService,
@@ -46,6 +47,7 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
     await this.quotationService.getSingleQuotation(this.id).subscribe(data => {
       this.quotation = data.payload;
       this.loadUserDetails();
+      debugger
       if(this.quotation.file != null && this.quotation.file != "" ){
         this.quotationAvailable = true;
       }else{
@@ -74,6 +76,7 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
     var obj = {
       "seller_id": this.userdetails.id
     }
+    this.purchaseOrder= "accepted"
     this.invoiceService.postOrders(obj).subscribe(data => {
       if (data.success == true) {
         this.spinner.hide();
@@ -84,6 +87,12 @@ export class RequestedQuotationOrderStatusComponent implements OnInit {
         this.spinner.hide();
       }
     });
+  }
+
+  onReject(id: any) {
+  
+    this.purchaseOrder= "rejected"
+    
   }
 
 }

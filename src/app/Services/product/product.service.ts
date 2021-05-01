@@ -49,11 +49,11 @@ export class ProductService {
   }
 
   searchProduct(product:String){
-    return this.http.get<any>(API_URL + '/products?q=san&category='+product);
+    return this.http.get<any>(API_URL + '/products?category='+product);
   }
 
   searchProductByName(product:String){
-    return this.http.get<any>(API_URL + '/products?q=san&name='+product);
+    return this.http.get<any>(API_URL + '/products?q='+product);
   }
   postProduct(obj: any): Observable<any> {
     var url = '/products';
