@@ -60,6 +60,42 @@
         <div style="margin: 30px;">
             <div class="row">
                 <div class="col-md-12">
+                    <label class="field_value"><u> Send Quotation</u></label>
+                    <br>
+                    <table id="designertbl" class="table table-bordered  tbl">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th>Marketer's Name</th>
+                                <th>Action</th>
+                                <th>Quotation</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tblrow">
+                            <tr>
+                                <td><b>{{ userdetails.full_name }}</b> </td>
+                                <td class="tblButton">
+                                    <input (change)="onQuotationChange($event)" class="uploadimagebtn btn btn-block btn-info"
+                                        title="Upload" type="file" id="myFile" name="filename">
+                                </td>
+                                <td class="tblButton">
+                                    <div *ngIf= "quotation.file == null || quotation.file == ''">
+                                            <b>Not Sent</b>
+                                    </div>
+                                    <div *ngIf= "quotation.file != null && quotation.file != ''">
+                                            <b> Sent</b>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 30px;">
+            <div class="row">
+                <div class="col-md-12">
                     <label class="field_value"><u> Send invoice</u></label>
                     <br>
                     <table id="designertbl" class="table table-bordered  tbl">
@@ -77,9 +113,14 @@
                                     <input (change)="onFileChange($event)" class="uploadimagebtn btn btn-block btn-info"
                                         title="Upload" type="file" id="myFile" name="filename">
                                 </td>
-                                <td class="tblButton">
-                                    <b>Not Sent</b>
-                                </td>
+                                <div style="margin-top:10px" class="text-align:center;">
+                                        <div *ngIf= "quotation.invoice == null || quotation.invoice == ''">
+                                                <b>Not Sent</b>
+                                        </div>
+                                        <div *ngIf= "quotation.invoice != null && quotation.invoice != ''">
+                                                <b>Sent</b>
+                                        </div>
+                                </div>
                             </tr>
                         </tbody>
 

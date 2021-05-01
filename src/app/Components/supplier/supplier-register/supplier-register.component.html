@@ -2,16 +2,16 @@
 
 <div class="split left">
   <div class="centered">
-    <img src="../../../../assets/img/supplier_register.png">
+    <!-- <img src="../../../../assets/img/supplier_register.png"> -->
   </div>
 </div>
 
-<div class="split right">
-  <div>
+<div class="split right px-4">
+  <div class="container">
     <!-- <img src="img_avatar.png" alt="Avatar man"> -->
-    <h1 style="text-align: center;">Register !</h1>
+    <h1 style="text-align: center;">Register</h1>
 
-    <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px;">
+    <form [formGroup]="formHeader" (ngSubmit)="onSubmit()">
       <div *ngIf="isPersonalInfo">
         <p>Personal Info</p>
         <br><br>

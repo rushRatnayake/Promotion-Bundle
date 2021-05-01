@@ -1,6 +1,6 @@
 .btn {
   display: block;
-  width: 400px;
+  /* width: 400px; */
   height: 50px;
   border-radius: 25px;
   outline: none;
@@ -19,6 +19,10 @@
   background-position: right;
 }
 
+.row {
+  align-items: center;
+}
+
 /* Split the screen in half */
 .split {
   /* margin-top: 100px; */
@@ -31,16 +35,19 @@
 
   padding-top: 20px;
   background-color: #227cc3;
-  background-image: linear-gradient(180deg, #ffffff, #227cc3);
+  /* background-image: linear-gradient(180deg, #ffffff, #227cc3); */
 }
 
 /* Control the left side */
 .left {
   left: 0;
-  background-color: #227cc3;
+  /* background-color: #227cc3; */
   overflow: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  background-image: url(/assets/img/marketer_register.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .left::-webkit-scrollbar {
   display: none;

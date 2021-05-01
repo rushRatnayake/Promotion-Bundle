@@ -44,6 +44,7 @@ export class RequestQuotationViewComponent implements OnInit {
   async loadDetails() {
     await this.quotationService.getSingleQuotation(this.id).subscribe(data => {
       this.quotation = data.payload;
+      debugger
       this.loadUserDetails();
     });
   }
@@ -67,10 +68,22 @@ export class RequestQuotationViewComponent implements OnInit {
     }
 
   }
+  onQuotationChange(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      this.commonService.postImage(formData).subscribe(data => {
+        data.payload.file_path
+        this.onQuotationSubmit(data.payload.file_path);
+      });
+    }
+
+  }
 
   onSubmit(invoice: any) {
     var obj = {
-      "invoice": invoice
+      "invoice": invoice,
     }
     this.invoiceService.postInvoice(obj, this.quotation._id).subscribe(data => {
       if (data.success == true) {
@@ -83,6 +96,23 @@ export class RequestQuotationViewComponent implements OnInit {
       }
     });
   }
-
+  
+  onQuotationSubmit(quotation: any) {
+    var obj = {
+      "file": quotation,
+      "status": "accepted"
+    }
+    this.invoiceService.postInvoice(obj, this.quotation._id).subscribe(data => {
+      if (data.success == true) {
+        debugger
+        this.spinner.hide();
+        this.toastr.success(data.payload);
+      }
+      else {
+        this.toastr.error(data.detail);
+        this.spinner.hide();
+      }
+    });
+  }
 
 }

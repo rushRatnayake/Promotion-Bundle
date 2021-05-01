@@ -3,94 +3,186 @@
     <div style="height: 100px;"></div>
     <br>
 
+    <div class="col">
+        <div class="row" *ngIf="dashboardDetails.quotations_requested !=0">
+            <div class="card" style="width: 100%; align-self: center;">
+                <div class="card-body">
+                    <h3 class="card-title" style="margin-bottom: 25px;margin-left: 2.5%">Personal Performance</h3>
+                    <div class="col">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-md-4 col-xl-3">
+                                    <div class="card bg-c-blue order-card">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20">Quotations Requested</h6>
+                                            <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                                    style="margin-top: 5px;"></i><span>{{dashboardDetails.quotations_requested || 0}}</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-xl-3">
+                                    <div class="card bg-c-green order-card">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20">Invoices Received</h6>
+                                            <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                                    style="margin-top: 5px;"></i><span>{{dashboardDetails.invoices_received || 0}}</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
 
-    <div class="row">
-        <div class="col-md-4 col-sm-4">
-            <div class="card">
-                <div class="card-header  maincard_body">Rankings</div>
-                <div class="card-body maincard_content">
-                    <div class="row" >
-                        <b>Overall Orders Placed </b>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xl-3">
+                                    <div class="card bg-c-yellow order-card">
+                                        <div class="card-block">
+                                            <h6 class="m-b-20">Designs Received</h6>
+                                            <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                                    style="margin-top: 5px;"></i><span>{{dashboardDetails.designs_requests || 0}}</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                        </div>
                     </div>
-                    <div class="row" class="largetext " style="margin-left: 20px;">
-                        {{dashboardDetails.overall_orders || 0}}
-                    </div>
-                    
-                   
                 </div>
             </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Overall Orders Placed</div>
-                <div class="card-body maincard_content largetext">{{dashboardDetails.overall_orders || 0}}</div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Top 3 Rated Suppliers</div>
-                <div *ngFor="let list of dashboardDetails.top_suppliers">
-                    <div class="card-body maincard_content maincard_content_small">{{list}}</div>
-                    <hr>
+        </div>
 
+        <div class="row" *ngIf="dashboardDetails.quotations_requested ==0">
+            <div class="card" style="width: 80%; align-self: center;">
+                <div class="card-body">
+                    <h3 class="card-title" style="margin-bottom: 25px">Personal Performance</h3>
+                    <div class="row">
+                        <div class="col-md-4 col-xl-3">
+                            <div class="card bg-c-blue order-card">
+                                <div class="card-block">
+                                    <h6 class="m-b-20">Quotations Requested</h6>
+                                    <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                            style="margin-top: 5px;"></i><span>{{dashboardDetails.quotations_requested || 0}}</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xl-3">
+                            <div class="card bg-c-green order-card">
+                                <div class="card-block">
+                                    <h6 class="m-b-20">Invoices Received</h6>
+                                    <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                            style="margin-top: 5px;"></i><span>{{dashboardDetails.invoices_received || 0}}</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-xl-3">
+                            <div class="card bg-c-yellow order-card">
+                                <div class="card-block">
+                                    <h6 class="m-b-20">Designs Received</h6>
+                                    <h2 class="text-right"><i class="fa fa-rocket f-left"
+                                            style="margin-top: 5px;"></i><span>{{dashboardDetails.designs_requests || 0}}</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="card-body maincard_content maincard_content_small">Suneth Perera</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="card">
+                    <div class="card-header  maincard_body">Rankings</div>
+                    <div class="card-body maincard_content">
+                        <div class="row">
+                            <b>Overall Orders Placed </b>
+                        </div>
+                        <div class="row" class="largetext " style="margin-left: 20px;">
+                            {{dashboardDetails.overall_orders || 0}}
+                        </div>
+
+
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Overall Orders Placed</div>
+                    <div class="card-body maincard_content largetext">{{dashboardDetails.overall_orders || 0}}</div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Top 3 Rated Suppliers</div>
+                    <div *ngFor="let list of dashboardDetails.top_suppliers">
+                        <div class="card-body maincard_content maincard_content_small">{{list}}</div>
+                        <hr>
+
+                    </div>
+                    <!-- <div class="card-body maincard_content maincard_content_small">Suneth Perera</div>
                 <hr>
                 <div class="card-body maincard_content maincard_content_small">Nanath Jayawickrama</div>
                 <hr> -->
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Top 3 Rated Designers</div>
-                <div *ngFor="let list of dashboardDetails.top_suppliers">
-                    <div class="card-body maincard_content maincard_content_small">{{list}}</div>
-                    <hr>
                 </div>
-                <!-- <div class="card-body maincard_content maincard_content_small">Roshan G</div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Top 3 Rated Designers</div>
+                    <div *ngFor="let list of dashboardDetails.top_suppliers">
+                        <div class="card-body maincard_content maincard_content_small">{{list}}</div>
+                        <hr>
+                    </div>
+                    <!-- <div class="card-body maincard_content maincard_content_small">Roshan G</div>
                 <hr>
                 <div class="card-body maincard_content maincard_content_small">Thiviru</div>
                 <hr> -->
-            </div>
+                </div>
 
-        </div>
-        <div class="col-md-4 col-sm-4">
-            <div class="card maincard_body">
-                <div class="card-header">Personal Performance</div>
             </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Quotations Requested</div>
-                <div class="card-body maincard_content largetext">{{dashboardDetails.quotations_requested || 0}}</div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Designs Requested</div>
-                <div class="card-body maincard_content largetext">{{dashboardDetails.designs_requests || 0}}</div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-header maincard_body">Invoices Received</div>
-                <div class="card-body maincard_content largetext">{{dashboardDetails.invoices_received || 0}}</div>
-                <hr>
-            </div>
-
-        </div>
-        <div class="col-md-4 col-sm-4">
-            <div class="card maincard_body">
-                <div class="card-header">Rewards Recieved</div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="card discountcard_body">
-                <div *ngFor="let list of dashboardDetails.rewards_received">
-                    <hr>
-                    <div
-                        class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext boldtext">
-                        {{list}}</div>
+            <div class="col-md-4 col-sm-4">
+                <div class="card maincard_body">
+                    <div class="card-header">Personal Performance</div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Quotations Requested</div>
+                    <div class="card-body maincard_content largetext">{{dashboardDetails.quotations_requested || 0}}
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Designs Requested</div>
+                    <div class="card-body maincard_content largetext">{{dashboardDetails.designs_requests || 0}}</div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-header maincard_body">Invoices Received</div>
+                    <div class="card-body maincard_content largetext">{{dashboardDetails.invoices_received || 0}}</div>
                     <hr>
                 </div>
-                <!--                 
+
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="card maincard_body">
+                    <div class="card-header">Rewards Recieved</div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="card discountcard_body">
+                    <div *ngFor="let list of dashboardDetails.rewards_received">
+                        <hr>
+                        <div
+                            class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext boldtext">
+                            {{list}}</div>
+                        <hr>
+                    </div>
+                    <!--                 
                 <div
                     class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext">
                     5% discount</div>
@@ -107,9 +199,10 @@
                     class="align-items-center d-flex justify-content-center card-body maincard_content maincard_content_small discounttext">
                     Free Design</div>
                 <hr> -->
+                </div>
             </div>
+
         </div>
 
-    </div>
 
-</div>
+    </div>

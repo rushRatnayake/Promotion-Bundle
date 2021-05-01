@@ -35,5 +35,17 @@ export class InvoiceService {
         }));
   }
 
+  postQuotation(obj: any, marketer_id: any): Observable<any> {
+    var url = '/quotations/' + marketer_id;
+    var data = obj;
+
+    return this.http.put<any>(API_URL + url, data)
+      .pipe(
+        tap(tokens => ''),
+        catchError(error => {
+          return of(error.error);
+        }));
+  }
+
 
 }
