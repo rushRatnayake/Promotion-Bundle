@@ -52,3 +52,8 @@
   font-size: 20px;
   border-radius: 5px;
 }
+
+.cover {
+  object-fit: contain;
+  height: 250px;
+}

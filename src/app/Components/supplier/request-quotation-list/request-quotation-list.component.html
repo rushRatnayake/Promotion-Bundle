@@ -17,9 +17,9 @@
 
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="designertbl" class="table table-bordered table-hover tbl">
+        <table id="designertbl" class="table table-bordered table-hover tbl" style="background-color: white;">
             <thead>
-                <tr>
+                <tr align="center">
                     <th>Requested ID</th>
                     <th>Product</th>
                     <th>Quantity</th>
@@ -32,25 +32,25 @@
                 <tr *ngFor="let list of quotationList">
                     <td>{{ list.marketer }}</td>
                     <td>{{ list.product_name }}</td>
-                    <td>{{ list.quantity }}</td>
-                    <td>{{ list.date | date:'shortDate' }}</td>
-                    <td class="tblButton">
+                    <td align="center">{{ list.quantity }}</td>
+                    <td align="center">{{ list.date | date:'shortDate' }}</td>
+                    <td class="tblButton" align="center">
                         <label *ngIf="list.status != 'sent'">
                                 {{list.status | titlecase}}
                         </label>
                         <div *ngIf="list.status == 'sent'">
                             <button (click)="onAccept(list)"  type="button" title="Upload"
-                                class="btn" style="color: white; float: left; width: 50%;">
+                                class="btn" style="color: white; float: left; width: 40%;">
                                 Accept
                             </button>
                             <button (click)="onReject(list)"  type="button" title="Upload"
-                                class="btn" style="color: white; float: right; width: 50%;">
+                                class="btn" style="color: white; float: right; width: 40%;">
                                 Reject
                             </button>
                         </div>
                     </td>
 
-                    <td class="tblButton">
+                    <td class="tblButton" align="center">
                         <button type="button" title="View Order Status" (click)="viewOrderStatusClick(list)"
                             class="btn">
                             View Order Status

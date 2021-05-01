@@ -19,7 +19,8 @@ export class RequestQuotationViewComponent implements OnInit {
   id!: any;
 
   userdetails: any;
-
+  quotationAvailable :boolean = false;
+  invoiceAvailable : boolean = false;
   constructor(
     private location: Location,
     private quotationService: QuotationService,
@@ -44,8 +45,16 @@ export class RequestQuotationViewComponent implements OnInit {
   async loadDetails() {
     await this.quotationService.getSingleQuotation(this.id).subscribe(data => {
       this.quotation = data.payload;
-      debugger
-      this.loadUserDetails();
+      if(this.quotation.file != null && this.quotation.file != "" ){
+        this.quotationAvailable = true;
+      }else{
+        this.quotationAvailable = false;
+      }
+      if(this.quotation.invoice != null && this.quotation.invoice != "" ){
+        this.invoiceAvailable = true;
+      }else{
+        this.invoiceAvailable = false;
+      }      this.loadUserDetails();
     });
   }
 

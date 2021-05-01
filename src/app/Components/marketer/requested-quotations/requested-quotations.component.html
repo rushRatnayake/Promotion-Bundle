@@ -25,12 +25,12 @@
   <div class="card-body">
     <table id="designertbl" class="table table-bordered table-hover tbl" style="background-color: white;">
       <thead>
-        <tr>
+        <tr align="center">
           <th>Requested ID</th>
           <th>Product</th>
           <th>Supplier</th>
           <th>Quantity</th>
-          <th>Date</th>
+          <th >Date</th>
           <th>Request Status</th>
           <th>Quotation</th>
           <th>Order Status</th>
@@ -41,11 +41,11 @@
           <td>{{ list._id }}</td>
           <td><a routerLink="/marketer/catalogue_single_product"><u>{{ list.product_name }}</u></a></td>
           <td><a routerLink="/marketer/supplier_profile_view/{{list.to}}"><u>{{ list.supplier }}</u></a></td>
-          <td>{{ list.quantity }}</td>
-          <td>{{ list.date }}</td>
-          <td>{{ list.status | titlecase  }}</td>
-          <td>{{ list.file == null || list.file == "" ? "Not Recieved" : "Recieved"}}</td>
-          <td class="tblButton">
+          <td align="center">{{ list.quantity }}</td>
+          <td align="center">{{ list.date }}</td>
+          <td align="center">{{ list.status | titlecase  }}</td>
+          <td align="center">{{ list.file == null || list.file == "" ? "Not Recieved" : "Recieved"}}</td>
+          <td class="tblButton" align="center">
             <button type="button" title="View Order Status" class="btn" (click)="viewOrderStatus(list)">
               View Order Status
             </button>

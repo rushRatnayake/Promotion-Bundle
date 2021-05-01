@@ -1,61 +1,61 @@
-<div class="bg">
+<div class="bg "style="background: #f9f9f9f9;">
 
-    <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div>
 
-    <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
 
-    <div class="col-md-8">
-        <div class="rightside">
-            <div style="margin: 30px;">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Request ID</label>
+    <div class="col-md-6 mx-auto">
+            <div class="quotation-card p-3 bg-white">
+                    <div style="margin: 30px;">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Request ID</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{quotation._id}}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Product</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{quotation.product_name}}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Supplier</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{userdetails.full_name}}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Quantity</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{quotation.quantity}}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Date</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{quotation.date | date:'shortDate' }}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label class="field_name">Quotation Request Status</label>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="field_value">{{quotation.status | titlecase}}</label>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{quotation._id}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Product</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{quotation.product_name}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Quantity</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{quotation.quantity}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Date</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{quotation.date | date:'shortDate'}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Quotation Request Status</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{quotation.status|titlecase}}</label>
-                    </div>
-                </div>
-                <br>
-
-            </div>
-        </div>
-
+                  </div>
         <br>
         <div style="margin: 30px;">
             <div class="row">
