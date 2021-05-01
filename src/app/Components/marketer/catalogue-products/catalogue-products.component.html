@@ -1,43 +1,38 @@
 <div class="bg">
-
-    <div style="height: 100px;"></div>
-    <br>
-
-    <div class="row">
-        <div class="col-md-4 col-sm-4">
-            <input style="margin-left: 8%;" type="text" class="form-control" placeholder="Search Product By Name" name="search"
-            [(ngModel)]="searchValue" (ngModelChange)="searchProduct()">
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <label class="label_style">View by Category:</label>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <ng-select [items]="categoryList" bindLabel="name" bindValue="id" placeholder="Select Category"
-                appendTo="body" [multiple]="false"  [(ngModel)]="category" (ngModelChange)="filterByCategory()" [clearable]="false">
-            </ng-select>
-        </div>
+  <div style="height: 100px;"></div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-sm-4">
+      <input style="margin-left: 8%;" type="text" class="form-control" placeholder="Search Product By Name"
+        name="search" [(ngModel)]="searchValue" (ngModelChange)="searchProduct()">
     </div>
-    <br>
-
-    <div class="row justify-content-around px-3">
-        <div class="col-md-3" *ngFor="let list of cardList">
-            <div class="card">
-                <div class="card-header" style="font-size: 1.1em;"><b>{{list.name}}</b></div>
-                <div class="card-body">
-                    <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png"
-                        alt="Edit">
-                    <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
-                    <div class="card-body">
-                        <button class="viewbtn" (click)="navigateToProduct(list)">View Product</button>
-                    </div>
-                    <div class="row">
-                        
-                            <p class="product_detail" style="text-align: center;"><b>Price - {{list.price}} LKR </b></p>
-                    </div>
-                </div>
-            </div>
-            <br>
-        </div>
+    <div class="col-md-3 col-sm-3">
+      <label class="label_style">View by Category:</label>
     </div>
+    <div class="col-md-2 col-sm-2">
+      <ng-select [items]="categoryList" bindLabel="name" bindValue="id" placeholder="Select Category" appendTo="body"
+        [multiple]="false" [(ngModel)]="category" (ngModelChange)="filterByCategory()" [clearable]="false">
+      </ng-select>
+    </div>
+  </div>
+  <br>
 
+  <div class="row px-3">
+    <div class="col-md-3" *ngFor="let list of cardList">
+      <div class="card">
+        <div class="card-header" style="font-size: 1.1em;"><b>{{list.name}}</b></div>
+        <div class="card-body">
+          <img *ngIf="!list.imageToShow" class="card-img-top cover" src="../../../../assets/img/profile.png" alt="Edit">
+          <img *ngIf="list.imageToShow" class="card-img-top cover" [src]="list.imageToShow" alt="Edit">
+          <div class="card-body">
+            <button class="viewbtn" (click)="navigateToProduct(list)">View Product</button>
+          </div>
+          <div class="row">
+            <p class="product_detail" style="text-align: center;"><b>Price - {{list.price}} LKR </b></p>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>

@@ -1,154 +1,121 @@
 <!-- <div class="bg"> -->
-
 <div style="height: 100px;"></div>
-
-
 <!-- <br> -->
 <!-- <div class="bg"> -->
-
-<div class="row">
-
-    <!-- image view -->
+<div class="card product-card p-3">
+  <!-- <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()"> -->
+  <div class="row">
     <div class="col-md-6">
-
-        <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
-        <br>
-
-        <div class="icon_img">
-            <img *ngIf="imageToShow" class="icon_img" [src]="imageToShow">
-            <img *ngIf="!imageToShow" src="../../../../../assets/img/profile.png">
-        </div>
-        <br>
-        <br>
-
-        <div class="row">
-            <div class="col-md-6">
-                <input (change)="onQty($event)" type="text" class="form-control" placeholder="Quantity">
-            </div>
-            <div class="col-md-6">
-                <button (click)="onRFQ()" type="button" class="btn btn-block btn-info ">RFQ</button>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <ng-select [items]="productList" bindLabel="name" bindValue="_id" placeholder="View Bundle Price with"
-                     [multiple]="false" (change)="onProductChange($event)">
-                </ng-select>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <input readonly value="{{price}}" type="text" style="height: 100px; text-align: center;"
-                    class="form-control" placeholder="Bundle Price">
-                <!-- <button type="button" class="btn btn-block btn-info ">Bundle Price</button> -->
-            </div>
-        </div>
-
-
+      <div class="icon_img">
+        <img *ngIf="imageToShow" class="icon_img" [src]="imageToShow">
+        <img *ngIf="!imageToShow" src="../../../../../assets/img/profile.png">
+      </div>
     </div>
-
-    <!-- detail view -->
     <div class="col-md-6">
-        <div class="rightside">
-            <div style="margin: 30px;">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Product Name</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.name || '11111'}} 22</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Brand Name</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.brand || ''}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Price</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.price || ''}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Supplier</label>
-                    </div>
-                    <div class="col-md-6">
-                        <a routerLink="/marketer/supplier_profile_view/{{supplier._id}}"
-                            class="field_value"><u>{{supplier.full_name}}</u></a>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Product Category</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.category}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Dimensions</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value"> {{productObject.dim.h || ''}} x {{productObject.dim.l || ''}} x
-                            {{productObject.dim.w || ''}} </label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Weight</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.weight || ''}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name">Volume</label>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="field_value">{{productObject.volume || ''}}</label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <label class="field_name"><u>Product Description</u></label>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                        <label class="field_value">{{productObject.description || ''}}</label>
-                    </div>
-                </div>
-                <br>
-                <br>
-            </div>
+      <div class="row">
+        <div class="col-md">
+          <h3 class=""> {{productObject.name || '11111'}}</h3>
         </div>
-
+      </div>
+      <div>
+        <label class="field_value">LKR {{productObject.price || ''}}</label>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Brand Name</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value">{{productObject.brand || ''}}</label>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Price</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value">{{productObject.price || ''}}</label>
+        </div>
+      </div>
+      <br> -->
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Supplier</label>
+        </div>
+        <div class="col-md-6">
+          <a routerLink="/marketer/supplier_profile_view/{{supplier._id}}"
+            class="field_value"><u>{{supplier.full_name}}</u></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Product Category</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value">{{productObject.category}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Dimensions</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value"> {{productObject.dim.h || ''}} x {{productObject.dim.l || ''}} x
+            {{productObject.dim.w || ''}} </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Weight</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value">{{productObject.weight || ''}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name">Volume</label>
+        </div>
+        <div class="col-md-6">
+          <label class="field_value">{{productObject.volume || ''}}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="field_name"><u>Product Description</u></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="field_value">{{productObject.description || ''}}</label>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
-
-<br>
-
-<!-- </div> -->
-
-<!-- </div> -->
+<div class="container mt-4 pb-3">
+  <div class="col-md-8 mx-auto">
+    <h3>Request a Quotation</h3>
+    <div class="form-group row">
+      <div class="col-md-6">
+        <input (change)="onQty($event)" type="text" class="form-control" placeholder="Quantity">
+      </div>
+      <div class="col-md-6">
+        <button (click)="onRFQ()" type="button" class="btn btn-block btn-info ">Request</button>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-12">
+        <ng-select [items]="productList" bindLabel="name" bindValue="_id" placeholder="View Bundle Price with"
+          [multiple]="false" (change)="onProductChange($event)">
+        </ng-select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-12">
+        <input readonly value="{{price}}" type="text" style="height: 100px; text-align: center;" class="form-control"
+          placeholder="Bundle Price">
+        <!-- <button type="button" class="btn btn-block btn-info ">Bundle Price</button> -->
+      </div>
+    </div>
+  </div>
+</div>

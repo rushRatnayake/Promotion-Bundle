@@ -3,11 +3,11 @@
 }
 
 .field_name {
-  font-size: 24px;
+  font-size: 15px;
 }
 
 .field_value {
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
   color: black;
 }
@@ -47,4 +47,11 @@ img {
 
 .btn {
   border: 2px solid white; /* Green */
+}
+
+.quotation-card {
+  /* width: clamp(500px, 800px, 1000px); */
+  margin: 0 auto;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  border-radius: 0.55rem;
 }

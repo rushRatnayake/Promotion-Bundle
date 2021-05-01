@@ -12,14 +12,15 @@
 
 .btn {
   display: block;
-  width: 90%;
-  margin-left: 20px;
-  margin-right: -10px;
+  width: max-content;
+  /* margin-left: 20px;
+  margin-right: -10px; */
   height: 80%;
   border-radius: 5px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #3173a8, #113e62, #3173a8);
+  /* background-image: linear-gradient(to right, #3173a8, #113e62, #3173a8); */
+  background: #0d68af;
   background-size: 200%;
   font-size: 12px;
   color: #fff;
@@ -27,4 +28,9 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.5s;
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgb(115 110 110 / 8%);
 }
