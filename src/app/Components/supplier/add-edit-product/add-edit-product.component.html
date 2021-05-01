@@ -1,153 +1,136 @@
 <div style="height: 100px;"></div>
 
 <img class="backbtn" src="../../../../../assets/img/back.png" (click)="backButtonClick()">
+<div class="card p-3 col-md-10 mx-auto">
+  <label style="font-size: 30px;" class="mb-3">{{title}}</label>
+  <!-- <div class="bg"> -->
 
-<label style="font-size: 20px;">{{title}}</label>
+  <form [formGroup]="formHeader" (ngSubmit)="onSubmit()" class="mx-4">
 
-<br>
-<br>
-<!-- <div class="bg"> -->
-
-<form [formGroup]="formHeader" (ngSubmit)="onSubmit()" style="margin-right: 80px;">
-
-    <div class="row">
-        <!-- detail view -->
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="field_name">Product Name</label>
-                </div>
-                <div class="col-md-6">
-                    <input formControlName="name" type="text" class="form-control" placeholder="Product Name">
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="field_name">Brand Name</label>
-                </div>
-                <div class="col-md-6">
-                    <input formControlName="brand" type="text" class="form-control" placeholder="Brand Name">
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="field_name">Price</label>
-                </div>
-                <div class="col-md-6">
-                    <input formControlName="price" type="number" class="form-control" placeholder="Price">
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="field_name">Product Category</label>
-                </div>
-                <div class="col-md-6">
-                    <ng-select formControlName="category" [items]="productCategoryList" bindLabel="name" bindValue="id"
-                        placeholder="Product Category" appendTo="body" [multiple]="false">
-                    </ng-select>
-                </div>
-            </div>
-            <br>
-            <br>
+    <div class="row align-items-center">
+      <!-- detail view -->
+      <div class="col-md-8">
+        <div class="row form-group">
+          <div class="col-md-6">
+            <label class="field_name">Product Name</label>
+          </div>
+          <div class="col-md-6">
+            <input formControlName="name" type="text" class="form-control" placeholder="Product Name">
+          </div>
         </div>
-        <!-- image view -->
-        <div class="col-md-4">
-            <br>
+        <div class="row form-group">
+          <div class="col-md-6">
+            <label class="field_name">Brand Name</label>
+          </div>
+          <div class="col-md-6">
+            <input formControlName="brand" type="text" class="form-control" placeholder="Brand Name">
+          </div>
+        </div>
+        <div class="row form-group">
+          <!-- image view -->
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
             <img class="icon_img" [src]="imageToShow" *ngIf="imageToShow">
             <input (change)="onFileChange($event)" class="uploadimagebtn btn btn-block btn-info" type="file" id="myFile"
-                name="filename">
-            <br>
+              name="filename">
+          </div>
         </div>
+        <div class="row form-group">
+          <div class="col-md-6">
+            <label class="field_name">Price</label>
+          </div>
+          <div class="col-md-6">
+            <input formControlName="price" type="number" class="form-control" placeholder="Price">
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-md-6">
+            <label class="field_name">Product Category</label>
+          </div>
+          <div class="col-md-6">
+            <ng-select formControlName="category" [items]="productCategoryList" bindLabel="name" bindValue="id"
+              placeholder="Product Category" appendTo="body" [multiple]="false">
+            </ng-select>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+      <div class="col-md-12">
 
-            <div formGroupName="dim">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="field_name">Product Dimensions</label>
-                    </div>
-                    <div class="col-md-1">
-                        <label class="field_name">Length</label>
-                    </div>
-                    <div class="col-md-1">
-                        <input formControlName="l" type="number" class="form-control" placeholder="in cm">
-                    </div>
-                    <div class="col-md-1">
-                        <label class="field_name">Width</label>
-                    </div>
-                    <div class="col-md-1">
-                        <input formControlName="w" type="number" class="form-control" placeholder="in cm">
-                    </div>
-                    <div class="col-md-1">
-                        <label class="field_name">Height</label>
-                    </div>
-                    <div class="col-md-1">
-                        <input formControlName="h" type="number" class="form-control" placeholder="in cm">
-                    </div>
-                </div>
+        <div formGroupName="dim">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="field_name">Product Dimensions</label>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="field_name">Weight</label>
-                </div>
-                <div class="col-md-2">
-                    <input formControlName="weight" type="number" class="form-control" placeholder="in g">
-                </div>
+            <div class="col-md-1">
+              <label class="field_name">Length</label>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="field_name">Volume</label>
-                </div>
-                <div class="col-md-2">
-                    <input formControlName="volume" type="number" class="form-control" placeholder="in ml">
-                </div>
+            <div class="col-md-1">
+              <input formControlName="l" type="number" class="form-control" placeholder="in cm">
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="field_name">Product Specifications</label>
-                </div>
-                <div class="col-md-4">
-                    <input formControlName="specification" type="number" class="form-control" placeholder="in ml">
-                </div>
+            <div class="col-md-1">
+              <label class="field_name">Width</label>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="field_name">Product Description</label>
-                </div>
-                <div class="col-md-4">
-                    <textarea formControlName="description" class="form-control" rows="4" cols="50">
-                </textarea>
-                </div>
+            <div class="col-md-1">
+              <input formControlName="w" type="number" class="form-control" placeholder="in cm">
             </div>
-            <br>
-
+            <div class="col-md-1">
+              <label class="field_name">Height</label>
+            </div>
+            <div class="col-md-1">
+              <input formControlName="h" type="number" class="form-control" placeholder="in cm">
+            </div>
+          </div>
         </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="field_name">Weight</label>
+          </div>
+          <div class="col-md-2">
+            <input formControlName="weight" type="number" class="form-control" placeholder="in g">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="field_name">Volume</label>
+          </div>
+          <div class="col-md-2">
+            <input formControlName="volume" type="number" class="form-control" placeholder="in ml">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="field_name">Product Specifications</label>
+          </div>
+          <div class="col-md-4">
+            <input formControlName="specification" type="number" class="form-control" placeholder="in ml">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <label class="field_name">Product Description</label>
+          </div>
+          <div class="col-md-4">
+            <textarea formControlName="description" class="form-control" rows="4" cols="50">
+                    </textarea>
+          </div>
+        </div>
+      </div>
     </div>
-
     <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
-        <div class="col" *ngIf="form_type=='add_edit' || form_type=='add'">
-            <button (click)="onSubmit()" type="button" class="btn btn-block btn-success ">Submit</button>
-        </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
+      <div class="col" *ngIf="form_type=='add_edit' || form_type=='add'">
+        <button (click)="onSubmit()" type="button" class="btn btn-block btn-success ">Submit</button>
+      </div>
     </div>
-</form>
-
-
-<br>
-<br>
-<br>
+  </form>
+</div>
