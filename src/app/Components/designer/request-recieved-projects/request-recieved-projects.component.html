@@ -81,7 +81,7 @@
             <td>{{ list.type }}</td>
             <td align="center">{{ list.pay_range }}</td>
             <td align="center">{{ list.created_at | date:'shortDate' }}</td>
-            <td>
+            <td align="center"> 
               <button (click)="onAccept(list)" type="button" title="Upload" class="btn" *ngIf="list.status == pending"
                 style="color: white; float: left; width: 40%; font-size: 12px;">
                 Accept
@@ -90,21 +90,21 @@
                 style="color: white; float: right; width: 40%;font-size: 12px;">
                 Reject
               </button>
-              <div *ngIf="list.status == accepted" class="text-center">{{list.status}}</div>
+              <div *ngIf="list.status == accepted" class="text-center">{{list.status | titlecase}}</div>
             </td>
-            <td>
-              <span *ngIf="list.images?.length != 0">
+            <td align="center">
+              <span *ngIf="list.images != null && list.images?.length > 0">
                 <i class="fa fa-download" aria-hidden="true"></i>
-                <a href="http://35.198.253.141/{{list.images}}" target="_blank">
+                <a href="http://35.198.253.141/{{list.images[0]}}" target="_blank">
                   Open Images
                 </a>
               </span>
-              <span *ngIf="list.images.length == 0">None</span>
+              <span *ngIf="list.images == null || list.images?.length == 0">None</span>
             </td>
             <!-- <td>{{ list.images.length || 0}}</td> -->
-            <td>{{list.no_images}}</td>
-            <td>{{list.email}}</td>
-            <td>{{ list.due_date | date:'shortDate' }}</td>
+            <td align="center">{{list.no_images}}</td>
+            <td align="center">{{list.email}}</td>
+            <td align="center">{{ list.due_date | date:'shortDate' }}</td>
           </tr>
         </tbody>
 

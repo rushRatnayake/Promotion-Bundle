@@ -6,6 +6,8 @@ import { DesignService } from 'src/app/Services/design/design.service';
 import { QuotationService } from 'src/app/Services/quotation/quotation.service';
 import { UserService } from 'src/app/Services/user/user.service';
 import { UPDATE_MSG } from 'src/app/app-global';
+import { ProfileService } from 'src/app/Services/profile/profile.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-request-recieved-projects',
@@ -32,15 +34,9 @@ export class RequestRecievedProjectsComponent implements OnInit {
     { id: "accepted", name: "accepted" },
   ];
 
+  userData:any = "";
   requestStatus = "";
-  projectList: any = [
-    // {
-    //   type: "Full Artwork", range: "3000", date: "2021-01-01", status: "pending", image: "", no_of_images: "4", deadline: "2021-03-01"
-    // },
-    // {
-    //   type: "Half Artwork", range: "8000", date: "2021-01-01", status: "Accepted", image: "", no_of_images: "10", deadline: "2021-03-01"
-    // },
-  ];
+  projectList!: any[];
 
   constructor(
     private designService: DesignService,
@@ -49,6 +45,8 @@ export class RequestRecievedProjectsComponent implements OnInit {
     private commonService: CommonService,
     private spinner: NgxSpinnerService,
     private toastr: ToastrService,
+    private profileService: ProfileService,
+
   ) { }
 
   ngOnInit(): void {
@@ -65,16 +63,24 @@ export class RequestRecievedProjectsComponent implements OnInit {
     // await this.designService.getDesignSearch(this.period, this.minpay, this.status).subscribe(data => {
     await this.designService.getDesignSearch(status).subscribe(data => {
       this.projectList = data.payload.designs;
-      console.log('PRoject list', this.projectList);
+      let line = 0;
+      this.projectList.forEach(element => {
+        debugger
+        this.getMarketerName(element.requester,line);
+        line++;
+      });
     });
-
-    await this.designService.getRequestedDesigns().subscribe(data=>{
-      var testing = data.payload.designs;
-      console.log(data.payload);
-    })
+    
   }
 
-
+  async getMarketerName(id: any, line: any) {
+    await this.profileService.getUserDetail(id).subscribe(data => {
+      this.userData = data.payload;
+      debugger
+      this.projectList[line].email = this.userData.email;
+      debugger
+    });
+  }
   onAccept(list: any) {
     this.designService.putAcceptDesign(list._id).subscribe(data => {
       // this.projectList = data.payload.designs;
