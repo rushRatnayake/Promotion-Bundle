@@ -65,7 +65,7 @@ export class RequestRecievedProjectsComponent implements OnInit {
     // await this.designService.getDesignSearch(this.period, this.minpay, this.status).subscribe(data => {
     await this.designService.getDesignSearch(status).subscribe(data => {
       this.projectList = data.payload.designs;
-      debugger
+      console.log('PRoject list', this.projectList);
     });
 
     await this.designService.getRequestedDesigns().subscribe(data=>{
